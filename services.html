@@ -1,0 +1,630 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>AutoShine Services — Comprehensive Car Detailing Menu</title>
+  <meta name="description" content="Explore AutoShine's complete detailing services: Exterior wash, interior steam cleaning, paint correction, 9H ceramic coatings, PPF, and leather conditioning.">
+  <link rel="icon" type="image/svg+xml" href="assets/images/favicon.svg">
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+  <!-- Navigation Bar -->
+  <header class="navbar">
+    <div class="container navbar-container">
+      <a href="index.html" class="brand-logo" aria-label="AutoShine Homepage">
+        <img src="assets/images/logo-dark.png" alt="Stackly Logo" width="144" height="40">
+      </a>
+
+      <nav class="nav-menu" aria-label="Main Navigation">
+        <a href="index.html" class="nav-link">Home</a>
+        <a href="about.html" class="nav-link">About</a>
+        <a href="services.html" class="nav-link active">Services</a>
+        <a href="packages.html" class="nav-link">Packages</a>
+        <a href="gallery.html" class="nav-link">Gallery</a>
+        <a href="before-after.html" class="nav-link">Before & After</a>
+        <a href="contact.html" class="nav-link">Contact</a>
+      </nav>
+
+      <div class="nav-actions">
+        <a href="login.html" class="btn-login-link">Login</a>
+        <a href="booking.html" class="btn btn-primary btn-sm">Book Now</a>
+        <button class="hamburger" aria-label="Toggle navigation menu" aria-expanded="false">
+          <span></span>
+          <span></span>
+          <span></span>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <!-- Mobile Drawer -->
+  <div class="mobile-drawer-overlay"></div>
+  <aside class="mobile-drawer" aria-label="Mobile Navigation Drawer">
+    <div class="mobile-drawer-header">
+      <a href="index.html" class="brand-logo" aria-label="AutoShine Homepage">
+        <img src="assets/images/logo-footer.png" alt="Stackly Logo" width="130" height="34">
+      </a>
+      <button class="mobile-drawer-close" aria-label="Close navigation menu">✕</button>
+    </div>
+    <div class="mobile-drawer-links">
+      <a href="index.html" class="nav-link">Home <span>→</span></a>
+      <a href="about.html" class="nav-link">About Us <span>→</span></a>
+      <a href="services.html" class="nav-link active">Services <span>→</span></a>
+      <a href="packages.html" class="nav-link">Packages & Pricing <span>→</span></a>
+      <a href="gallery.html" class="nav-link">Gallery <span>→</span></a>
+      <a href="before-after.html" class="nav-link">Before & After <span>→</span></a>
+      <a href="contact.html" class="nav-link">Locations & Contact <span>→</span></a>
+      <a href="login.html" class="nav-link">Account Login <span>→</span></a>
+    </div>
+    <div class="mobile-drawer-footer">
+      <a href="booking.html" class="btn btn-primary btn-block">Book an Appointment</a>
+      <div class="mobile-drawer-contact">
+        <p class="drawer-contact-item">
+          <span>📍</span> 404 Apex Blvd, Motor City
+        </p>
+        <p class="drawer-contact-item">
+          <span>📞</span> <a href="tel:5557492886">(555) 749-2886</a>
+        </p>
+        <p class="drawer-contact-item">
+          <span>✉️</span> <a href="mailto:concierge@autoshine-demo.com">concierge@autoshine-demo.com</a>
+        </p>
+      </div>
+    </div>
+  </aside>
+
+  <main>
+    <!-- Page Header -->
+    <section class="section-padding" style="background: linear-gradient(180deg, rgba(255,42,59,0.06) 0%, transparent 100%); padding-bottom: 2rem;">
+      <div class="container text-center" style="max-width: 800px; margin: 0 auto;">
+        <span class="section-tag">Master Catalog</span>
+        <h1>Precision <span class="text-gradient">Detailing Services</span></h1>
+        <p style="font-size: 1.15rem; margin-top: 1rem;">
+          From basic scratch-free hand washing to high-end 9H ceramic coatings and leather conditioning, explore our surgical automotive care treatments.
+        </p>
+
+        <!-- Search & Filter Controls -->
+        <div style="margin-top: 2.5rem; max-width: 550px; margin-left: auto; margin-right: auto;">
+          <input 
+            type="text" 
+            id="serviceSearchInput" 
+            class="form-control" 
+            placeholder="🔍 Search services (e.g. ceramic, leather, wash, ppf)..." 
+            style="border-radius: 999px; padding: 0.9rem 1.6rem; font-size: 1rem; background: var(--bg-card); border-color: var(--border-light);"
+          >
+        </div>
+
+        <div class="filter-bar" style="margin-top: 1.5rem; margin-bottom: 0;">
+          <button class="filter-btn service-filter-btn active" data-category="all">All Services (12)</button>
+          <button class="filter-btn service-filter-btn" data-category="exterior">Exterior (3)</button>
+          <button class="filter-btn service-filter-btn" data-category="interior">Interior (3)</button>
+          <button class="filter-btn service-filter-btn" data-category="protection">Protection (3)</button>
+          <button class="filter-btn service-filter-btn" data-category="specialty">Specialty (3)</button>
+        </div>
+      </div>
+    </section>
+
+    <!-- Services Grid (12 Balanced Services) -->
+    <section class="section-padding" style="padding-top: 1.8rem; padding-bottom: 3.5rem;">
+      <div class="container">
+        <div class="services-grid" id="servicesContainer">
+
+          <!-- 1. Exterior Car Wash -->
+          <article class="service-card" data-category="exterior">
+            <div class="service-card-media">
+              <img src="assets/images/service-exterior-wash.webp" alt="Exterior car wash foam bath" loading="lazy">
+              <span class="service-badge">Exterior</span>
+            </div>
+            <div class="service-card-body">
+              <h3>Exterior Car Wash</h3>
+              <p>Two-bucket scratch-free hand wash, foam cannon pre-treatment, wheel face decontamination, and plush microfiber air dry.</p>
+              <div class="service-meta">
+                <span class="service-duration">⏱ 1.5 - 2 Hours</span>
+                <div class="service-price">
+                  <span>Starting at</span>
+                  <strong>$49*</strong>
+                </div>
+              </div>
+              <div class="demo-pricing-tag">*Configurable demo pricing</div>
+              <div style="display: flex; gap: 0.5rem; margin-top: auto;">
+                <a href="service-details.html" class="btn btn-secondary btn-sm" style="flex: 1;">Details</a>
+                <a href="booking.html?service=wash" class="btn btn-primary btn-sm" style="flex: 1;">Book Service</a>
+              </div>
+            </div>
+          </article>
+
+          <!-- 2. Interior Deep Cleaning -->
+          <article class="service-card" data-category="interior">
+            <div class="service-card-media">
+              <img src="assets/images/service-interior-clean.webp" alt="Interior detailing cockpit" loading="lazy">
+              <span class="service-badge">Interior</span>
+            </div>
+            <div class="service-card-body">
+              <h3>Interior Deep Cleaning</h3>
+              <p>Hot steam extraction of carpets and floor mats, deep leather scrubbing, AC vent sterilization, and odor neutralization.</p>
+              <div class="service-meta">
+                <span class="service-duration">⏱ 2.5 - 3 Hours</span>
+                <div class="service-price">
+                  <span>Starting at</span>
+                  <strong>$129*</strong>
+                </div>
+              </div>
+              <div class="demo-pricing-tag">*Configurable demo pricing</div>
+              <div style="display: flex; gap: 0.5rem; margin-top: auto;">
+                <a href="service-details.html" class="btn btn-secondary btn-sm" style="flex: 1;">Details</a>
+                <a href="booking.html?service=interior" class="btn btn-primary btn-sm" style="flex: 1;">Book Service</a>
+              </div>
+            </div>
+          </article>
+
+          <!-- 3. Full Car Detailing -->
+          <article class="service-card" data-category="specialty">
+            <div class="service-card-media">
+              <img src="assets/images/service-full-detail.webp" alt="Full car detailing completed studio finish" loading="lazy">
+              <span class="service-badge">Specialty</span>
+            </div>
+            <div class="service-card-body">
+              <h3>Full Car Detailing</h3>
+              <p>Total bumper-to-bumper vehicle restoration: complete interior extraction, single-stage gloss polish, and engine bay detail.</p>
+              <div class="service-meta">
+                <span class="service-duration">⏱ 5 - 7 Hours</span>
+                <div class="service-price">
+                  <span>Starting at</span>
+                  <strong>$199*</strong>
+                </div>
+              </div>
+              <div class="demo-pricing-tag">*Configurable demo pricing</div>
+              <div style="display: flex; gap: 0.5rem; margin-top: auto;">
+                <a href="service-details.html" class="btn btn-secondary btn-sm" style="flex: 1;">Details</a>
+                <a href="booking.html?service=full-detail" class="btn btn-primary btn-sm" style="flex: 1;">Book Service</a>
+              </div>
+            </div>
+          </article>
+
+          <!-- 4. Ceramic Coating -->
+          <article class="service-card" data-category="protection">
+            <div class="service-card-media">
+              <img src="assets/images/service-ceramic-coating.webp" alt="Ceramic coating water beading on car hood" loading="lazy">
+              <span class="service-badge">Protection</span>
+            </div>
+            <div class="service-card-body">
+              <h3>Ceramic Coating</h3>
+              <p>Semi-permanent 9H nano-ceramic armor. Extreme water and dirt repellency, chemical resistance, and rich deep gloss.</p>
+              <div class="service-meta">
+                <span class="service-duration">⏱ 1 - 2 Days</span>
+                <div class="service-price">
+                  <span>Starting at</span>
+                  <strong>$599*</strong>
+                </div>
+              </div>
+              <div class="demo-pricing-tag">*Configurable demo pricing</div>
+              <div style="display: flex; gap: 0.5rem; margin-top: auto;">
+                <a href="service-details.html" class="btn btn-secondary btn-sm" style="flex: 1;">Details</a>
+                <a href="booking.html?service=ceramic" class="btn btn-primary btn-sm" style="flex: 1;">Book Service</a>
+              </div>
+            </div>
+          </article>
+
+          <!-- 5. Paint Correction -->
+          <article class="service-card" data-category="exterior">
+            <div class="service-card-media">
+              <img src="assets/images/service-paint-correction.webp" alt="Machine rotary polisher paint correction" loading="lazy">
+              <span class="service-badge">Exterior</span>
+            </div>
+            <div class="service-card-body">
+              <h3>Paint Correction</h3>
+              <p>Multi-stage compounding and polishing to eliminate swirl marks, light scratches, buffer trails, and heavy paint hazing.</p>
+              <div class="service-meta">
+                <span class="service-duration">⏱ 4 - 6 Hours</span>
+                <div class="service-price">
+                  <span>Starting at</span>
+                  <strong>$349*</strong>
+                </div>
+              </div>
+              <div class="demo-pricing-tag">*Configurable demo pricing</div>
+              <div style="display: flex; gap: 0.5rem; margin-top: auto;">
+                <a href="service-details.html" class="btn btn-secondary btn-sm" style="flex: 1;">Details</a>
+                <a href="booking.html?service=correction" class="btn btn-primary btn-sm" style="flex: 1;">Book Service</a>
+              </div>
+            </div>
+          </article>
+
+          <!-- 6. Paint Protection Film (PPF) -->
+          <article class="service-card" data-category="protection">
+            <div class="service-card-media">
+              <img src="assets/images/service-ppf.webp" alt="Paint protection film clear bra on car" loading="lazy">
+              <span class="service-badge">Protection</span>
+            </div>
+            <div class="service-card-body">
+              <h3>Paint Protection Film (PPF)</h3>
+              <p>Ultra-clear 8-mil self-healing polyurethane film guarding high-impact panels against rock chips, road gravel, and abrasions.</p>
+              <div class="service-meta">
+                <span class="service-duration">⏱ 2 - 3 Days</span>
+                <div class="service-price">
+                  <span>Starting at</span>
+                  <strong>$899*</strong>
+                </div>
+              </div>
+              <div class="demo-pricing-tag">*Configurable demo pricing</div>
+              <div style="display: flex; gap: 0.5rem; margin-top: auto;">
+                <a href="service-details.html" class="btn btn-secondary btn-sm" style="flex: 1;">Details</a>
+                <a href="booking.html?service=ppf" class="btn btn-primary btn-sm" style="flex: 1;">Book Service</a>
+              </div>
+            </div>
+          </article>
+
+          <!-- 7. Headlight Restoration -->
+          <article class="service-card" data-category="specialty">
+            <div class="service-card-media">
+              <img src="assets/images/service-headlight.webp" alt="Crystal clear restored car headlight" loading="lazy">
+              <span class="service-badge">Specialty</span>
+            </div>
+            <div class="service-card-body">
+              <h3>Headlight Restoration</h3>
+              <p>Multi-step wet-sanding, compounding, optical polishing, and UV-resistant ceramic seal to clear yellowed oxidized lenses.</p>
+              <div class="service-meta">
+                <span class="service-duration">⏱ 1 - 1.5 Hours</span>
+                <div class="service-price">
+                  <span>Starting at</span>
+                  <strong>$79*</strong>
+                </div>
+              </div>
+              <div class="demo-pricing-tag">*Configurable demo pricing</div>
+              <div style="display: flex; gap: 0.5rem; margin-top: auto;">
+                <a href="service-details.html" class="btn btn-secondary btn-sm" style="flex: 1;">Details</a>
+                <a href="booking.html?service=headlight" class="btn btn-primary btn-sm" style="flex: 1;">Book Service</a>
+              </div>
+            </div>
+          </article>
+
+          <!-- 8. Engine Bay Cleaning -->
+          <article class="service-card" data-category="specialty">
+            <div class="service-card-media">
+              <img src="assets/images/service-engine-bay.webp" alt="Clean sports car engine bay" loading="lazy">
+              <span class="service-badge">Specialty</span>
+            </div>
+            <div class="service-card-body">
+              <h3>Engine Bay Cleaning</h3>
+              <p>Safe low-moisture steam degreasing of engine components, delicate electrical protection, and satin dressing on plastic covers.</p>
+              <div class="service-meta">
+                <span class="service-duration">⏱ 1.5 Hours</span>
+                <div class="service-price">
+                  <span>Starting at</span>
+                  <strong>$89*</strong>
+                </div>
+              </div>
+              <div class="demo-pricing-tag">*Configurable demo pricing</div>
+              <div style="display: flex; gap: 0.5rem; margin-top: auto;">
+                <a href="service-details.html" class="btn btn-secondary btn-sm" style="flex: 1;">Details</a>
+                <a href="booking.html?service=engine" class="btn btn-primary btn-sm" style="flex: 1;">Book Service</a>
+              </div>
+            </div>
+          </article>
+
+          <!-- 9. Waxing and Polishing -->
+          <article class="service-card" data-category="exterior">
+            <div class="service-card-media">
+              <img src="assets/images/service-wax-polish.webp" alt="Car wax application and hand polishing" loading="lazy">
+              <span class="service-badge">Exterior</span>
+            </div>
+            <div class="service-card-body">
+              <h3>Waxing and Polishing</h3>
+              <p>Application of high-grade Brazilian carnauba paste wax over a high-gloss jeweling glaze for an unmatched wet mirror look.</p>
+              <div class="service-meta">
+                <span class="service-duration">⏱ 2 Hours</span>
+                <div class="service-price">
+                  <span>Starting at</span>
+                  <strong>$99*</strong>
+                </div>
+              </div>
+              <div class="demo-pricing-tag">*Configurable demo pricing</div>
+              <div style="display: flex; gap: 0.5rem; margin-top: auto;">
+                <a href="service-details.html" class="btn btn-secondary btn-sm" style="flex: 1;">Details</a>
+                <a href="booking.html?service=wax" class="btn btn-primary btn-sm" style="flex: 1;">Book Service</a>
+              </div>
+            </div>
+          </article>
+
+          <!-- 10. Leather Seat Conditioning -->
+          <article class="service-card" data-category="interior">
+            <div class="service-card-media">
+              <img src="assets/images/service-leather.webp" alt="Luxury car leather seat restoration" loading="lazy">
+              <span class="service-badge">Interior</span>
+            </div>
+            <div class="service-card-body">
+              <h3>Leather Seat Conditioning</h3>
+              <p>Gentle deep cleaning with horsehair brushes followed by nourishing lanolin oils to revive soft supple texture and prevent cracking.</p>
+              <div class="service-meta">
+                <span class="service-duration">⏱ 2 Hours</span>
+                <div class="service-price">
+                  <span>Starting at</span>
+                  <strong>$119*</strong>
+                </div>
+              </div>
+              <div class="demo-pricing-tag">*Configurable demo pricing</div>
+              <div style="display: flex; gap: 0.5rem; margin-top: auto;">
+                <a href="service-details.html" class="btn btn-secondary btn-sm" style="flex: 1;">Details</a>
+                <a href="booking.html?service=leather" class="btn btn-primary btn-sm" style="flex: 1;">Book Service</a>
+              </div>
+            </div>
+          </article>
+
+          <!-- 11. Odor Removal & Ozone Sanitization -->
+          <article class="service-card" data-category="interior">
+            <div class="service-card-media">
+              <img src="assets/images/gallery-4.webp" alt="Interior ozone decontamination" loading="lazy">
+              <span class="service-badge">Interior</span>
+            </div>
+            <div class="service-card-body">
+              <h3>Odor Elimination & Ozone</h3>
+              <p>Medical-grade gaseous ozone sterilization purging stubborn tobacco, pet, dampness, and biological odors from deep cabin foam.</p>
+              <div class="service-meta">
+                <span class="service-duration">⏱ 1 Hour</span>
+                <div class="service-price">
+                  <span>Starting at</span>
+                  <strong>$69*</strong>
+                </div>
+              </div>
+              <div class="demo-pricing-tag">*Configurable demo pricing</div>
+              <div style="display: flex; gap: 0.5rem; margin-top: auto;">
+                <a href="service-details.html" class="btn btn-secondary btn-sm" style="flex: 1;">Details</a>
+                <a href="booking.html?service=odor" class="btn btn-primary btn-sm" style="flex: 1;">Book Service</a>
+              </div>
+            </div>
+          </article>
+
+          <!-- 12. Wheel & Caliper Ceramic Coating -->
+          <article class="service-card" data-category="protection">
+            <div class="service-card-media">
+              <img src="assets/images/ba-wheel-after.webp" alt="Alloy wheel and caliper ceramic coating" loading="lazy">
+              <span class="service-badge">Protection</span>
+            </div>
+            <div class="service-card-body">
+              <h3>Wheel & Caliper Ceramic</h3>
+              <p>Wheels-off intensive chemical decontamination, inner barrel polish, and 800°C heat-resistant ceramic shield repelling baked brake dust.</p>
+              <div class="service-meta">
+                <span class="service-duration">⏱ 2.5 Hours</span>
+                <div class="service-price">
+                  <span>Starting at</span>
+                  <strong>$179*</strong>
+                </div>
+              </div>
+              <div class="demo-pricing-tag">*Configurable demo pricing</div>
+              <div style="display: flex; gap: 0.5rem; margin-top: auto;">
+                <a href="service-details.html" class="btn btn-secondary btn-sm" style="flex: 1;">Details</a>
+                <a href="booking.html?service=wheel-ceramic" class="btn btn-primary btn-sm" style="flex: 1;">Book Service</a>
+              </div>
+            </div>
+          </article>
+
+        </div>
+
+        <!-- No Results Indicator -->
+        <div id="noServicesMsg" style="display: none; text-align: center; padding: 4rem 1rem;">
+          <h3 style="color: var(--silver-mid);">No matching services found</h3>
+          <p>Try searching for a different keyword or resetting the category filter.</p>
+        </div>
+      </div>
+    </section>
+
+        <!-- New Section 1: Interactive Service Tier Comparison Matrix -->
+    <section class="section-padding" style="background: var(--bg-secondary); border-top: 1px solid var(--border-subtle); border-bottom: 1px solid var(--border-subtle);">
+      <div class="container">
+        <div class="section-header">
+          <span class="section-tag">Direct Comparison</span>
+          <h2>Compare Our Detailing & Protection Tiers</h2>
+          <p>Find the exact level of protection and rejuvenation tailored to your vehicle's paintwork condition.</p>
+        </div>
+
+        <div class="matrix-table-wrap">
+          <table class="matrix-table">
+            <thead>
+              <tr>
+                <th>Protection Feature</th>
+                <th>Maintenance Wash</th>
+                <th>Paint Polish</th>
+                <th>9H Ceramic Guard</th>
+                <th>Self-Healing PPF</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td><strong>Hydrophobic Durability</strong></td>
+                <td>2 - 4 Weeks</td>
+                <td>3 - 6 Months</td>
+                <td>2 - 5 Years</td>
+                <td>7 - 10 Years</td>
+              </tr>
+              <tr>
+                <td><strong>Swirl & Scratch Removal</strong></td>
+                <td><span class="matrix-dash">—</span></td>
+                <td>50% - 70% Cut</td>
+                <td>85% - 95% Cut</td>
+                <td>Full Clear Shield</td>
+              </tr>
+              <tr>
+                <td><strong>Rock Chip Protection</strong></td>
+                <td><span class="matrix-dash">—</span></td>
+                <td><span class="matrix-dash">—</span></td>
+                <td>Minor Chemical Barrier</td>
+                <td><span class="matrix-check">✔ 8-Mil Urethane</span></td>
+              </tr>
+              <tr>
+                <td><strong>Self-Cleaning Water Beading</strong></td>
+                <td>Moderate</td>
+                <td>High</td>
+                <td><span class="matrix-check">✔ Extreme 110° Angle</span></td>
+                <td><span class="matrix-check">✔ Extreme 115° Angle</span></td>
+              </tr>
+              <tr>
+                <td><strong>UV & Chemical Fallout Resistance</strong></td>
+                <td>Basic</td>
+                <td>Enhanced</td>
+                <td><span class="matrix-check">✔ Acid / Bird Lime Guard</span></td>
+                <td><span class="matrix-check">✔ Maximum Barrier</span></td>
+              </tr>
+              <tr>
+                <td><strong>Estimated Starting Price</strong></td>
+                <td><strong>$89*</strong></td>
+                <td><strong>$249*</strong></td>
+                <td><strong>$599*</strong></td>
+                <td><strong>$1,299*</strong></td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </section>
+
+    <!-- New Section 2: Laboratory Grade Formulations & Tools -->
+    <section class="section-padding">
+      <div class="container">
+        <div class="section-header">
+          <span class="section-tag">Science of Clean</span>
+          <h2>Clinical Grade Equipment & Formulations</h2>
+          <p>We deploy professional-grade chemistry and precision German/Italian equipment for paint-safe results.</p>
+        </div>
+
+        <div class="cert-grid">
+          <div class="cert-card">
+            <div class="feature-icon-wrap">🧪</div>
+            <h3>pH-Neutral Snow Foams</h3>
+            <p>High-lubricity surfactant formulas that encapsulate abrasive road dirt and lift grit away without stripping factory clear coats or ceramic sealants.</p>
+          </div>
+
+          <div class="cert-card">
+            <div class="feature-icon-wrap">⚙️</div>
+            <h3>Dual-Action Random Orbitals</h3>
+            <p>Italian Rupes BigFoot polishers that distribute heat evenly across curved panels, preventing clear-coat burning while achieving mirror-like optical clarity.</p>
+          </div>
+
+          <div class="cert-card">
+            <div class="feature-icon-wrap">💡</div>
+            <h3>Infrared Curing Array</h3>
+            <p>Short-wave infrared lamps bake the ceramic matrix into the clear-coat pores at 65°C, ensuring full molecular bonding prior to outdoor release.</p>
+          </div>
+
+          <div class="cert-card">
+            <div class="feature-icon-wrap">💨</div>
+            <h3>Heated Biocide Extraction</h3>
+            <p>Commercial-grade 180°C steam injectors and sub-surface hot-water extractors eliminate allergens, mold spores, and odors without harsh chemical residue.</p>
+          </div>
+
+          <div class="cert-card">
+            <div class="feature-icon-wrap">🔬</div>
+            <h3>PosiTector Paint Gauges</h3>
+            <p>Ultrasonic electromagnetic sensors non-destructively read primer, basecoat, and clear-coat layers down to 0.1 µm precision.</p>
+          </div>
+
+          <div class="cert-card">
+            <div class="feature-icon-wrap">🛡️</div>
+            <h3>SiO2 & Graphene Chemistry</h3>
+            <p>Advanced quartz-silica and carbon-lattice nanocoatings that bond covalently to paint, resisting acid fallout and UV fading for years.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- New Section 3: Signature Stackly CTA Banner -->
+    <section class="section-padding" style="padding-top: 0;">
+      <div class="container">
+        <div class="cta-banner">
+          <div class="cta-banner-content">
+            <h2 class="cta-heading">Join thousands of passionate drivers and collectors protecting their vehicles with clean, surgical automotive brilliance.</h2>
+            <div class="cta-buttons">
+              <a href="booking.html" class="btn btn-mint-pill">Book a Service</a>
+              <a href="packages.html" class="btn btn-glass-pill">Explore Packages</a>
+              <a href="gallery.html" class="btn btn-glass-pill">View Transformations</a>
+            </div>
+            <div class="cta-contact-strip">
+              <span>📍 404 Apex Boulevard, Motor City</span>
+              <span>📞 (555) 749-2886</span>
+              <span>⏱ Mon-Sat: 8am - 6pm</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- Site Footer -->
+  <footer class="site-footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-col">
+          <a href="index.html" class="brand-logo" style="margin-bottom: 1.2rem;">
+            <img src="assets/images/logo-footer.png" alt="Stackly Logo" width="144" height="40">
+          </a>
+          <p>
+            Mobilizing intelligent car detailing, multi-stage paint correction, ceramic coatings, and personalized automotive care for modern vehicles.
+          </p>
+          <div class="social-links" style="margin-top: 1.5rem;">
+            <a href="404.html" class="social-btn" aria-label="LinkedIn">
+              <svg width="15" height="15" viewBox="0 0 24 24" fill="currentColor"><path d="M19 3a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h14m-.5 15.5v-5.3a3.26 3.26 0 0 0-3.26-3.26c-.85 0-1.84.52-2.28 1.3v-1.11h-2.79v8.37h2.79v-4.93c0-.77.62-1.4 1.39-1.4a1.4 1.4 0 0 1 1.4 1.4v4.93h2.75M6.46 10.9v8.37H9.2V10.9H6.46M7.83 6.25c-.9 0-1.62.72-1.62 1.62s.72 1.63 1.62 1.63 1.63-.73 1.63-1.63c0-.9-.73-1.62-1.63-1.62Z"/></svg>
+            </a>
+            <a href="404.html" class="social-btn" aria-label="X (Twitter)">
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg>
+            </a>
+            <a href="404.html" class="social-btn" aria-label="Instagram">
+              <svg width="15" height="15" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/></svg>
+            </a>
+            <a href="404.html" class="social-btn" aria-label="YouTube">
+              <svg width="15" height="15" viewBox="0 0 24 24" fill="currentColor"><path d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"/></svg>
+            </a>
+          </div>
+        </div>
+
+        <div class="footer-col">
+          <h4>Quick Links</h4>
+          <ul class="footer-links">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="about.html">About Stackly</a></li>
+            <li><a href="services.html">Platform Services</a></li>
+            <li><a href="packages.html">Detailing Packages</a></li>
+            <li><a href="gallery.html">Transformation Gallery</a></li>
+            <li><a href="before-after.html">Before & After</a></li>
+            <li><a href="contact.html">Contact Coordinates</a></li>
+            <li><a href="user-dashboard.html">User Dashboard</a></li>
+          </ul>
+        </div>
+
+        <div class="footer-col">
+          <h4>Support</h4>
+          <ul class="footer-links">
+            <li><a href="contact.html">Contact Coordinates</a></li>
+            <li><a href="404.html">Terms & Agreements</a></li>
+            <li><a href="404.html">Security Audits</a></li>
+            <li><a href="service-details.html">Ceramic Coating 9H</a></li>
+            <li><a href="service-details.html">Multi-Stage Paint Correction</a></li>
+            <li><a href="services.html">Interior Restoration</a></li>
+          </ul>
+        </div>
+
+        <div class="footer-col footer-newsletter">
+          <h4>Newsletter</h4>
+          <p>Get quarterly automotive care updates, smart detailing alerts, and platform feature reports.</p>
+          <form class="newsletter-form">
+            <input type="email" placeholder="Your Email" required aria-label="Email for newsletter">
+            <button type="submit">Join</button>
+          </form>
+          <div style="margin-top: 1.5rem; font-size: 0.82rem; color: #64748b;">
+            Demo Notice: Configurable sample prices and front-end interactions.
+          </div>
+        </div>
+      </div>
+
+      <div class="footer-bottom">
+        <p>© 2026 Stackly AutoCare. All rights reserved. Designed for precision clarity and automotive perfection.</p>
+        <div>
+          <a href="about.html" style="margin-right: 1.5rem;">Privacy Policy</a>
+          <a href="about.html" style="margin-right: 1.5rem;">Terms of Service</a>
+          <a href="404.html">Security Audits</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <script src="js/script.js"></script>
+</body>
+</html>

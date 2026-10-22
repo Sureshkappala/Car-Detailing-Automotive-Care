@@ -1,0 +1,405 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Visual Gallery — AutoShine Automotive Care</title>
+  <meta name="description" content="Explore AutoShine's gallery of high-gloss vehicle transformations: ceramic coating reflections, leather interior restorations, and supercar detailing.">
+  <link rel="icon" type="image/svg+xml" href="assets/images/favicon.svg">
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+  <!-- Navigation Bar -->
+  <header class="navbar">
+    <div class="container navbar-container">
+      <a href="index.html" class="brand-logo" aria-label="AutoShine Homepage">
+        <img src="assets/images/logo-dark.png" alt="Stackly Logo" width="144" height="40">
+      </a>
+
+      <nav class="nav-menu" aria-label="Main Navigation">
+        <a href="index.html" class="nav-link">Home</a>
+        <a href="about.html" class="nav-link">About</a>
+        <a href="services.html" class="nav-link">Services</a>
+        <a href="packages.html" class="nav-link">Packages</a>
+        <a href="gallery.html" class="nav-link active">Gallery</a>
+        <a href="before-after.html" class="nav-link">Before & After</a>
+        <a href="contact.html" class="nav-link">Contact</a>
+      </nav>
+
+      <div class="nav-actions">
+        <a href="login.html" class="btn-login-link">Login</a>
+        <a href="booking.html" class="btn btn-primary btn-sm">Book Now</a>
+        <button class="hamburger" aria-label="Toggle navigation menu" aria-expanded="false">
+          <span></span>
+          <span></span>
+          <span></span>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <!-- Mobile Drawer -->
+  <div class="mobile-drawer-overlay"></div>
+  <aside class="mobile-drawer" aria-label="Mobile Navigation Drawer">
+    <div class="mobile-drawer-header">
+      <a href="index.html" class="brand-logo" aria-label="AutoShine Homepage">
+        <img src="assets/images/logo-footer.png" alt="Stackly Logo" width="130" height="34">
+      </a>
+      <button class="mobile-drawer-close" aria-label="Close navigation menu">✕</button>
+    </div>
+    <div class="mobile-drawer-links">
+      <a href="index.html" class="nav-link">Home <span>→</span></a>
+      <a href="about.html" class="nav-link">About Us <span>→</span></a>
+      <a href="services.html" class="nav-link">Services <span>→</span></a>
+      <a href="packages.html" class="nav-link">Packages & Pricing <span>→</span></a>
+      <a href="gallery.html" class="nav-link active">Gallery <span>→</span></a>
+      <a href="before-after.html" class="nav-link">Before & After <span>→</span></a>
+      <a href="contact.html" class="nav-link">Locations & Contact <span>→</span></a>
+      <a href="login.html" class="nav-link">Account Login <span>→</span></a>
+    </div>
+    <div class="mobile-drawer-footer">
+      <a href="booking.html" class="btn btn-primary btn-block">Book an Appointment</a>
+      <div class="mobile-drawer-contact">
+        <p class="drawer-contact-item">
+          <span>📍</span> 404 Apex Blvd, Motor City
+        </p>
+        <p class="drawer-contact-item">
+          <span>📞</span> <a href="tel:5557492886">(555) 749-2886</a>
+        </p>
+        <p class="drawer-contact-item">
+          <span>✉️</span> <a href="mailto:concierge@autoshine-demo.com">concierge@autoshine-demo.com</a>
+        </p>
+      </div>
+    </div>
+  </aside>
+
+  <main>
+    <!-- Header -->
+    <section class="section-padding" style="background: linear-gradient(180deg, rgba(255,42,59,0.06) 0%, transparent 100%); padding-bottom: 2rem;">
+      <div class="container text-center" style="max-width: 800px; margin: 0 auto;">
+        <span class="section-tag">Visual Masterpieces</span>
+        <h1>Automotive <span class="text-gradient">Portfolio Gallery</span></h1>
+        <p style="font-size: 1.15rem; margin-top: 1rem;">
+          Browse high-resolution photographs of supercars, luxury sedans, and restored classics treated inside our studio.
+        </p>
+
+        <!-- Category Filters -->
+        <div class="filter-bar gallery-filter" style="margin-top: 2rem; margin-bottom: 0;">
+          <button class="filter-btn active" data-filter="all">All Showcase</button>
+          <button class="filter-btn" data-filter="ceramic">Ceramic Coating</button>
+          <button class="filter-btn" data-filter="correction">Paint Correction</button>
+          <button class="filter-btn" data-filter="interior">Interior Care</button>
+          <button class="filter-btn" data-filter="exterior">Exterior & Wash</button>
+          <button class="filter-btn" data-filter="exotics">Supercars</button>
+        </div>
+      </div>
+    </section>
+
+    <!-- Gallery Grid -->
+    <section class="section-padding">
+      <div class="container">
+        <div class="gallery-grid">
+          
+          <!-- Item 1 -->
+          <div class="gallery-item" data-category="exotics">
+            <img src="assets/images/hero-car.webp" alt="Porsche 911 GT3 in Studio Lights" loading="lazy">
+            <div class="gallery-overlay">
+              <h4>Porsche 911 GT3 RS</h4>
+              <span>Full PPF & 9H Ceramic Armor</span>
+            </div>
+          </div>
+
+          <!-- Item 2 -->
+          <div class="gallery-item" data-category="ceramic">
+            <img src="assets/images/service-ceramic-coating.webp" alt="Ceramic Coating Water Beads" loading="lazy">
+            <div class="gallery-overlay">
+              <h4>Hydrophobic Water Contact</h4>
+              <span>9H Ceramic Coating Demo</span>
+            </div>
+          </div>
+
+          <!-- Item 3 -->
+          <div class="gallery-item" data-category="correction">
+            <img src="assets/images/service-paint-correction.webp" alt="Rotary Machine Paint Levelling" loading="lazy">
+            <div class="gallery-overlay">
+              <h4>Stage-2 Paint Correction</h4>
+              <span>98% Swirl Mark Elimination</span>
+            </div>
+          </div>
+
+          <!-- Item 4 -->
+          <div class="gallery-item" data-category="interior">
+            <img src="assets/images/service-interior-clean.webp" alt="Luxury Cockpit Leather Detail" loading="lazy">
+            <div class="gallery-overlay">
+              <h4>Cockpit & Leather Extraction</h4>
+              <span>Matte OEM Interior Rejuvenation</span>
+            </div>
+          </div>
+
+          <!-- Item 5 -->
+          <div class="gallery-item" data-category="exterior">
+            <img src="assets/images/service-exterior-wash.webp" alt="Thick Snow Foam Pre-Soak Bath" loading="lazy">
+            <div class="gallery-overlay">
+              <h4>Touchless Snow Foam Bath</h4>
+              <span>pH-Neutral Scratch-Free Wash</span>
+            </div>
+          </div>
+
+          <!-- Item 6 -->
+          <div class="gallery-item" data-category="exotics">
+            <img src="assets/images/gallery-6.webp" alt="Ferrari Supercar Red Reflection" loading="lazy">
+            <div class="gallery-overlay">
+              <h4>Ferrari Red Carnauba Glow</h4>
+              <span>Jeweled Finish & Swiss Wax</span>
+            </div>
+          </div>
+
+          <!-- Item 7 -->
+          <div class="gallery-item" data-category="ceramic">
+            <img src="assets/images/gallery-2.webp" alt="Metallic Blue Reflection Depth" loading="lazy">
+            <div class="gallery-overlay">
+              <h4>Deep Metallic Blue Clarity</h4>
+              <span>Multi-Stage Correction & Coating</span>
+            </div>
+          </div>
+
+          <!-- Item 8 -->
+          <div class="gallery-item" data-category="exotics">
+            <img src="assets/images/gallery-3.webp" alt="Luxury Performance SUV Detail" loading="lazy">
+            <div class="gallery-overlay">
+              <h4>Performance SUV Armor</h4>
+              <span>Ultimate Protection Package</span>
+            </div>
+          </div>
+
+          <!-- Item 9 -->
+          <div class="gallery-item" data-category="interior">
+            <img src="assets/images/service-leather.webp" alt="Perforated Leather Conditioning" loading="lazy">
+            <div class="gallery-overlay">
+              <h4>Perforated Leather Nutrition</h4>
+              <span>Supple Finish & UV Shield</span>
+            </div>
+          </div>
+
+          <!-- Item 10 -->
+          <div class="gallery-item" data-category="exterior">
+            <img src="assets/images/ba-wheel-after.webp" alt="Ceramic Coated Gloss Wheel" loading="lazy">
+            <div class="gallery-overlay">
+              <h4>Alloy Wheel & Caliper Shield</h4>
+              <span>Ceramic Rim Face Protection</span>
+            </div>
+          </div>
+
+          <!-- Item 11 -->
+          <div class="gallery-item" data-category="correction">
+            <img src="assets/images/service-headlight.webp" alt="Crystal Headlight Polishing" loading="lazy">
+            <div class="gallery-overlay">
+              <h4>Headlight Optical Clarity</h4>
+              <span>Wet-Sand Restoration & Ceramic Seal</span>
+            </div>
+          </div>
+
+          <!-- Item 12 -->
+          <div class="gallery-item" data-category="exterior">
+            <img src="assets/images/service-engine-bay.webp" alt="High Performance Engine Bay" loading="lazy">
+            <div class="gallery-overlay">
+              <h4>Engine Bay Precision Clean</h4>
+              <span>Steam Degrease & Satin Protection</span>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- Lightbox Modal -->
+    <div id="lightboxModal" class="lightbox-modal" role="dialog" aria-modal="true" aria-label="Image Lightbox Viewer">
+      <div class="lightbox-content">
+        <button class="lightbox-close" aria-label="Close modal viewer">×</button>
+        <button class="lightbox-nav lightbox-prev" aria-label="Previous image">‹</button>
+        <img class="lightbox-img" src="" alt="Enlarged gallery view">
+        <div class="lightbox-caption"></div>
+        <button class="lightbox-nav lightbox-next" aria-label="Next image">›</button>
+      </div>
+    </div>
+
+        <!-- New Section 1: Studio Lighting & Technology -->
+    <section class="section-padding" style="background: var(--bg-secondary); border-top: 1px solid var(--border-subtle); border-bottom: 1px solid var(--border-subtle);">
+      <div class="container">
+        <div class="section-header">
+          <span class="section-tag">Clinical Studio Lighting</span>
+          <h2>The Clean Bay Technology Behind the Finish</h2>
+          <p>Every photo in our gallery is illuminated under high-intensity inspection arrays designed to expose paint flaws rather than hide them.</p>
+        </div>
+
+        <div class="cert-grid">
+          <div class="cert-card">
+            <div class="feature-icon-wrap">💡</div>
+            <h3>CRI 98+ Scangrip LED Arrays</h3>
+            <p>Full-spectrum inspection lighting reproduces true daylight color temperatures (4500K to 6500K), revealing micro-holograms invisible under normal garage lights.</p>
+          </div>
+
+          <div class="cert-card">
+            <div class="feature-icon-wrap">🌪️</div>
+            <h3>HEPA Positive Pressure Clean Bay</h3>
+            <p>Our dedicated ceramic application bay cycles filtered air continuously, preventing microscopic airborne dust from settling during coating flash times.</p>
+          </div>
+
+          <div class="cert-card">
+            <div class="feature-icon-wrap">📐</div>
+            <h3>Non-Invasive Paint Depth Scanners</h3>
+            <p>PosiTector electromagnetic paint thickness gauges measure clear-coat depth down to 0.1 microns, ensuring surgical safety on exotic carbon and aluminum panels.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- New Section 2: Collector & Car Club Testimonials -->
+    <section class="section-padding">
+      <div class="container">
+        <div class="section-header">
+          <span class="section-tag">Owner Feedback</span>
+          <h2>What Drivers Say About the Results</h2>
+          <p>Real reactions from drivers who trusted AutoShine with their pride and joy.</p>
+        </div>
+
+        <div class="reviews-grid">
+          <div class="review-card">
+            <div class="review-rating">★★★★★</div>
+            <p>“The optical depth on my Guards Red GT3 is absurd. It looks like it was dipped in liquid glass. Rain literally sheets off before it can form droplets.”</p>
+            <div class="reviewer">
+              <div class="reviewer-info">
+                <h4>Julian Vance</h4>
+                <span>Porsche 992 GT3 Owner</span>
+              </div>
+            </div>
+          </div>
+
+          <div class="review-card">
+            <div class="review-rating">★★★★★</div>
+            <p>“They removed 6 years of automated brush wash swirl marks from my Black M5. The paint is completely defect-free and the interior smells like a brand-new showroom.”</p>
+            <div class="reviewer">
+              <div class="reviewer-info">
+                <h4>Marcus Thorne</h4>
+                <span>BMW M5 Competition Owner</span>
+              </div>
+            </div>
+          </div>
+
+          <div class="review-card">
+            <div class="review-rating">★★★★★</div>
+            <p>“Surgical attention to detail. Every wheel spoke, brake caliper, and exhaust tip was cleaned to factory perfection. Worth every single dollar.”</p>
+            <div class="reviewer">
+              <div class="reviewer-info">
+                <h4>Claire Fontaine</h4>
+                <span>Aston Martin Vantage Owner</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- New Section 3: Signature Stackly CTA Banner -->
+    <section class="section-padding" style="padding-top: 0;">
+      <div class="container">
+        <div class="cta-banner">
+          <div class="cta-banner-content">
+            <h2 class="cta-heading">Join thousands of passionate drivers and collectors protecting their vehicles with clean, surgical automotive brilliance.</h2>
+            <div class="cta-buttons">
+              <a href="booking.html" class="btn btn-mint-pill">Book a Service</a>
+              <a href="packages.html" class="btn btn-glass-pill">Explore Packages</a>
+              <a href="gallery.html" class="btn btn-glass-pill">View Transformations</a>
+            </div>
+            <div class="cta-contact-strip">
+              <span>📍 404 Apex Boulevard, Motor City</span>
+              <span>📞 (555) 749-2886</span>
+              <span>⏱ Mon-Sat: 8am - 6pm</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- Site Footer -->
+  <footer class="site-footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-col">
+          <a href="index.html" class="brand-logo" style="margin-bottom: 1.2rem;">
+            <img src="assets/images/logo-footer.png" alt="Stackly Logo" width="144" height="40">
+          </a>
+          <p>
+            Mobilizing intelligent car detailing, multi-stage paint correction, ceramic coatings, and personalized automotive care for modern vehicles.
+          </p>
+          <div class="social-links" style="margin-top: 1.5rem;">
+            <a href="404.html" class="social-btn" aria-label="LinkedIn">
+              <svg width="15" height="15" viewBox="0 0 24 24" fill="currentColor"><path d="M19 3a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h14m-.5 15.5v-5.3a3.26 3.26 0 0 0-3.26-3.26c-.85 0-1.84.52-2.28 1.3v-1.11h-2.79v8.37h2.79v-4.93c0-.77.62-1.4 1.39-1.4a1.4 1.4 0 0 1 1.4 1.4v4.93h2.75M6.46 10.9v8.37H9.2V10.9H6.46M7.83 6.25c-.9 0-1.62.72-1.62 1.62s.72 1.63 1.62 1.63 1.63-.73 1.63-1.63c0-.9-.73-1.62-1.63-1.62Z"/></svg>
+            </a>
+            <a href="404.html" class="social-btn" aria-label="X (Twitter)">
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg>
+            </a>
+            <a href="404.html" class="social-btn" aria-label="Instagram">
+              <svg width="15" height="15" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/></svg>
+            </a>
+            <a href="404.html" class="social-btn" aria-label="YouTube">
+              <svg width="15" height="15" viewBox="0 0 24 24" fill="currentColor"><path d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"/></svg>
+            </a>
+          </div>
+        </div>
+
+        <div class="footer-col">
+          <h4>Quick Links</h4>
+          <ul class="footer-links">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="about.html">About Stackly</a></li>
+            <li><a href="services.html">Platform Services</a></li>
+            <li><a href="packages.html">Detailing Packages</a></li>
+            <li><a href="gallery.html">Transformation Gallery</a></li>
+            <li><a href="before-after.html">Before & After</a></li>
+            <li><a href="contact.html">Contact Coordinates</a></li>
+            <li><a href="user-dashboard.html">User Dashboard</a></li>
+          </ul>
+        </div>
+
+        <div class="footer-col">
+          <h4>Support</h4>
+          <ul class="footer-links">
+            <li><a href="contact.html">Contact Coordinates</a></li>
+            <li><a href="404.html">Terms & Agreements</a></li>
+            <li><a href="404.html">Security Audits</a></li>
+            <li><a href="service-details.html">Ceramic Coating 9H</a></li>
+            <li><a href="service-details.html">Multi-Stage Paint Correction</a></li>
+            <li><a href="services.html">Interior Restoration</a></li>
+          </ul>
+        </div>
+
+        <div class="footer-col footer-newsletter">
+          <h4>Newsletter</h4>
+          <p>Get quarterly automotive care updates, smart detailing alerts, and platform feature reports.</p>
+          <form class="newsletter-form">
+            <input type="email" placeholder="Your Email" required aria-label="Email for newsletter">
+            <button type="submit">Join</button>
+          </form>
+          <div style="margin-top: 1.5rem; font-size: 0.82rem; color: #64748b;">
+            Demo Notice: Configurable sample prices and front-end interactions.
+          </div>
+        </div>
+      </div>
+
+      <div class="footer-bottom">
+        <p>© 2026 Stackly AutoCare. All rights reserved. Designed for precision clarity and automotive perfection.</p>
+        <div>
+          <a href="about.html" style="margin-right: 1.5rem;">Privacy Policy</a>
+          <a href="about.html" style="margin-right: 1.5rem;">Terms of Service</a>
+          <a href="404.html">Security Audits</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <script src="js/script.js"></script>
+</body>
+</html>

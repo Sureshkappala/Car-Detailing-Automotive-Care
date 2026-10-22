@@ -1,0 +1,697 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Admin Dashboard — AutoShine Studio Management</title>
+  <meta name="description" content="Administrative control center for AutoShine detailing studio: manage appointments, services, customer records, and studio analytics.">
+  <link rel="icon" type="image/svg+xml" href="assets/images/favicon.svg">
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body class="admin-dashboard-page">
+
+  <!-- Admin Dashboard Mobile Header Bar -->
+  <header class="dashboard-mobile-bar">
+    <div style="display: flex; align-items: center; gap: 0.8rem;">
+      <a href="admin-dashboard.html" class="brand-logo" aria-label="AutoShine Admin Dashboard">
+        <img src="assets/images/logo-footer.png" alt="Stackly Logo" width="130" height="34">
+      </a>
+      <span class="status-badge" style="background: rgba(255,42,59,0.2); color: var(--red-primary); border: 1px solid var(--border-red); font-size: 0.72rem; padding: 0.2rem 0.5rem;">
+        Admin
+      </span>
+    </div>
+    <div class="dashboard-mobile-actions">
+      <a href="index.html" class="btn btn-secondary btn-sm" style="padding: 0.35rem 0.7rem; font-size: 0.8rem;" target="_blank">Live Site ↗</a>
+      <button id="adminMobileToggle" class="dash-menu-toggle hamburger" aria-label="Toggle Admin Menu" aria-expanded="false" style="display: flex !important; width: 40px; height: 40px; background: rgba(255,255,255,0.06); border: 1px solid rgba(255,255,255,0.15);">
+        <span style="background: #ffffff;"></span>
+        <span style="background: #ffffff;"></span>
+        <span style="background: #ffffff;"></span>
+      </button>
+    </div>
+  </header>
+
+  <!-- Mobile Sidebar Overlay -->
+  <div class="dashboard-sidebar-overlay"></div>
+
+  <!-- Admin Dashboard Layout -->
+  <div class="dashboard-layout">
+    
+    <!-- Sidebar Navigation -->
+    <aside class="dashboard-sidebar">
+      <div>
+        <!-- Sidebar Brand & Close (Header) -->
+        <div class="dashboard-sidebar-header">
+          <a href="admin-dashboard.html" class="brand-logo" aria-label="AutoShine Admin Dashboard">
+            <img src="assets/images/logo-footer.png" alt="Stackly Logo" width="130" height="34">
+          </a>
+          <button class="dashboard-sidebar-close" aria-label="Close menu">✕</button>
+        </div>
+
+        <div class="sidebar-profile">
+          <div style="width: 48px; height: 48px; border-radius: 50%; background: var(--red-primary); color: #fff; font-weight: 900; display: flex; align-items: center; justify-content: center; font-size: 1.2rem;">
+            AD
+          </div>
+          <div>
+            <h4 style="font-size: 1rem; margin-bottom: 0.1rem;">Studio Master</h4>
+            <span style="font-size: 0.78rem; color: #10b981; font-weight: 700;">Super Administrator</span>
+          </div>
+        </div>
+
+        <nav class="sidebar-nav">
+          <div class="sidebar-link active" data-tab="adm-overview">
+            <span>📊</span> Overview KPIs
+          </div>
+          <div class="sidebar-link" data-tab="adm-appointments">
+            <span>📅</span> Manage Appointments
+          </div>
+          <div class="sidebar-link" data-tab="adm-services">
+            <span>🛠</span> Manage Services
+          </div>
+          <div class="sidebar-link" data-tab="adm-packages">
+            <span>📦</span> Manage Packages
+          </div>
+          <div class="sidebar-link" data-tab="adm-customers">
+            <span>👥</span> Manage Customers
+          </div>
+          <div class="sidebar-link" data-tab="adm-gallery">
+            <span>🖼</span> Manage Gallery
+          </div>
+          <div class="sidebar-link" data-tab="adm-reviews">
+            <span>💬</span> Customer Reviews
+          </div>
+          <div class="sidebar-link" data-tab="adm-reports">
+            <span>📈</span> Business Reports
+          </div>
+          <div class="sidebar-link" data-tab="adm-settings">
+            <span>⚙</span> Studio Settings
+          </div>
+        </nav>
+      </div>
+
+      <div>
+        <div style="font-size: 0.75rem; color: #fbbf24; background: rgba(251,191,36,0.1); padding: 0.8rem; border-radius: var(--radius-sm); margin-bottom: 1.2rem; border: 1px solid rgba(251,191,36,0.25);">
+          Front-end Demo Environment. Simulated changes update in browser memory.
+        </div>
+        <a href="login.html" class="sidebar-link" style="color: #ef4444;" onclick="showToast('Logged out of admin session.', 'info')">
+          <span>🚪</span> Exit Admin
+        </a>
+      </div>
+    </aside>
+
+    <!-- Main Content Area -->
+    <main class="dashboard-content">
+
+      <!-- TAB 1: OVERVIEW -->
+      <section id="adm-overview" class="dashboard-tab-content" style="display: block;">
+        <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 2rem; flex-wrap: wrap; gap: 1rem;">
+          <div>
+            <h2>Admin Executive Dashboard</h2>
+            <p>Real-time telemetry, bay capacity, and service scheduling for AutoShine Studio.</p>
+          </div>
+          <a href="404.html" class="btn btn-primary btn-sm">Export Run Sheet</a>
+        </div>
+
+        <!-- KPI Cards -->
+        <div class="kpi-grid">
+          <div class="kpi-card">
+            <div>
+              <span>Demo Revenue (Month)</span>
+              <h3 class="text-gradient">$38,420</h3>
+            </div>
+            <div class="kpi-icon">💰</div>
+          </div>
+
+          <div class="kpi-card">
+            <div>
+              <span>Active Bookings</span>
+              <h3 class="text-red">14</h3>
+            </div>
+            <div class="kpi-icon">📅</div>
+          </div>
+
+          <div class="kpi-card">
+            <div>
+              <span>Registered Clients</span>
+              <h3>428</h3>
+            </div>
+            <div class="kpi-icon">👥</div>
+          </div>
+
+          <div class="kpi-card">
+            <div>
+              <span>Completed Details</span>
+              <h3 style="color: #10b981;">1,180</h3>
+            </div>
+            <div class="kpi-icon">✓</div>
+          </div>
+        </div>
+
+        <!-- Quick Appointments Queue Table -->
+        <div style="margin-top: 2rem;">
+          <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 1.2rem;">
+            <h3>Today's Studio Detailing Queue</h3>
+            <span class="status-badge progress">Bays at 85% Capacity</span>
+          </div>
+
+          <div class="table-responsive">
+            <table class="data-table">
+              <thead>
+                <tr>
+                  <th>Bay #</th>
+                  <th>Customer</th>
+                  <th>Vehicle</th>
+                  <th>Treatment</th>
+                  <th>Slot</th>
+                  <th>Status</th>
+                  <th>Actions</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td><strong>Bay 01</strong></td>
+                  <td>Marcus Vance</td>
+                  <td>Porsche 911 GT3 (Chalk)</td>
+                  <td>2-Stage Paint Correction</td>
+                  <td>09:00 AM</td>
+                  <td>
+                    <select class="form-control admin-status-select" style="padding: 0.3rem 0.6rem; font-size: 0.8rem; width: auto;">
+                      <option value="In Progress" selected>In Progress</option>
+                      <option value="Completed">Completed</option>
+                      <option value="Pending">Pending</option>
+                      <option value="Cancelled">Cancelled</option>
+                    </select>
+                  </td>
+                  <td>
+                    <button class="btn btn-outline-red btn-sm btn-admin-delete" data-item="appointment">Delete</button>
+                  </td>
+                </tr>
+                <tr>
+                  <td><strong>Bay 02</strong></td>
+                  <td>Elena Rostova</td>
+                  <td>Audi RS6 Avant (Nardo)</td>
+                  <td>Ceramic Coating 9H Base</td>
+                  <td>11:00 AM</td>
+                  <td>
+                    <select class="form-control admin-status-select" style="padding: 0.3rem 0.6rem; font-size: 0.8rem; width: auto;">
+                      <option value="Confirmed" selected>Confirmed</option>
+                      <option value="In Progress">In Progress</option>
+                      <option value="Completed">Completed</option>
+                    </select>
+                  </td>
+                  <td>
+                    <button class="btn btn-outline-red btn-sm btn-admin-delete" data-item="appointment">Delete</button>
+                  </td>
+                </tr>
+                <tr>
+                  <td><strong>Bay 03</strong></td>
+                  <td>David Sterling</td>
+                  <td>BMW M4 (Frozen Black)</td>
+                  <td>Interior Steam Rejuvenation</td>
+                  <td>01:30 PM</td>
+                  <td>
+                    <select class="form-control admin-status-select" style="padding: 0.3rem 0.6rem; font-size: 0.8rem; width: auto;">
+                      <option value="Pending" selected>Pending Check-in</option>
+                      <option value="In Progress">In Progress</option>
+                      <option value="Completed">Completed</option>
+                    </select>
+                  </td>
+                  <td>
+                    <button class="btn btn-outline-red btn-sm btn-admin-delete" data-item="appointment">Delete</button>
+                  </td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+              <!-- New Section 1: Studio Clean Room Bay Environmental Telemetry -->
+        <div style="margin-top: 2.5rem; background: var(--bg-card); border: 1px solid var(--border-subtle); border-radius: var(--radius-lg); padding: 1.8rem;">
+          <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 1.2rem; flex-wrap: wrap; gap: 1rem;">
+            <div>
+              <span class="section-tag">Clean Room Monitoring</span>
+              <h3 style="margin-top: 0.2rem;">Environmental Bay Conditions</h3>
+            </div>
+            <span class="status-badge confirmed">Climate Calibrated for 9H Flash Cure</span>
+          </div>
+
+          <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 1.2rem;">
+            <div style="background: var(--bg-tertiary); padding: 1rem; border-radius: var(--radius-sm); border: 1px solid var(--border-subtle);">
+              <span style="font-size: 0.8rem; color: var(--silver-mid);">Bay 1 - 4 Temp</span>
+              <strong style="display: block; font-size: 1.3rem; color: #10b981; margin-top: 0.2rem;">21.5°C</strong>
+            </div>
+
+            <div style="background: var(--bg-tertiary); padding: 1rem; border-radius: var(--radius-sm); border: 1px solid var(--border-subtle);">
+              <span style="font-size: 0.8rem; color: var(--silver-mid);">Relative Humidity</span>
+              <strong style="display: block; font-size: 1.3rem; color: #10b981; margin-top: 0.2rem;">48% RH (Optimal)</strong>
+            </div>
+
+            <div style="background: var(--bg-tertiary); padding: 1rem; border-radius: var(--radius-sm); border: 1px solid var(--border-subtle);">
+              <span style="font-size: 0.8rem; color: var(--silver-mid);">HEPA Air Cycles</span>
+              <strong style="display: block; font-size: 1.3rem; color: var(--red-primary); margin-top: 0.2rem;">18 Cycles / Hr</strong>
+            </div>
+
+            <div style="background: var(--bg-tertiary); padding: 1rem; border-radius: var(--radius-sm); border: 1px solid var(--border-subtle);">
+              <span style="font-size: 0.8rem; color: var(--silver-mid);">Infrared Oven Array</span>
+              <strong style="display: block; font-size: 1.3rem; color: #38bdf8; margin-top: 0.2rem;">Bay 02 Active (65°C)</strong>
+            </div>
+          </div>
+        </div>
+
+        <!-- New Section 2: Chemical Inventory & Consumables Stock -->
+        <div class="dash-two-col" style="margin-top: 2rem;">
+          <div style="background: var(--bg-card); border: 1px solid var(--border-subtle); border-radius: var(--radius-lg); padding: 1.8rem;">
+            <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 1rem;">
+              <h4>Chemical Inventory Status</h4>
+              <span style="font-size: 0.8rem; color: var(--silver-mid);">Auto-Restock Alert</span>
+            </div>
+            <div style="display: flex; flex-direction: column; gap: 0.8rem; font-size: 0.9rem;">
+              <div style="display: flex; justify-content: space-between; border-bottom: 1px solid var(--border-subtle); padding-bottom: 0.4rem;">
+                <span>9H Diamond Ceramic Vials (50ml)</span>
+                <strong style="color: #10b981;">18 Vials (Safe)</strong>
+              </div>
+              <div style="display: flex; justify-content: space-between; border-bottom: 1px solid var(--border-subtle); padding-bottom: 0.4rem;">
+                <span>Rupes Yellow Microfiber Cutting Pads</span>
+                <strong style="color: #f59e0b;">6 Units (Reorder Soon)</strong>
+              </div>
+              <div style="display: flex; justify-content: space-between; border-bottom: 1px solid var(--border-subtle); padding-bottom: 0.4rem;">
+                <span>Sonax Iron Fallout Decon (20L)</span>
+                <strong style="color: #10b981;">3 Barrels (Adequate)</strong>
+              </div>
+            </div>
+          </div>
+
+          <div style="background: var(--bg-card); border: 1px solid var(--border-subtle); border-radius: var(--radius-lg); padding: 1.8rem;">
+            <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 1rem;">
+              <h4>Customer Satisfaction Index</h4>
+              <span class="status-badge confirmed">NPS: 98.8%</span>
+            </div>
+            <p style="font-size: 0.88rem; color: var(--silver-mid); margin-bottom: 1rem;">
+              Zero warranty claim requests or clear-coat rework disputes filed over the last 180 consecutive studio appointments.
+            </p>
+            <div style="display: flex; gap: 1rem;">
+              <a href="404.html" class="btn btn-secondary btn-sm">Download Audit Log</a>
+              <a href="404.html" class="btn btn-primary btn-sm">Sync Reviews</a>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- TAB 2: MANAGE APPOINTMENTS -->
+      <section id="adm-appointments" class="dashboard-tab-content" style="display: none;">
+        <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 2rem; flex-wrap: wrap; gap: 1rem;">
+          <div>
+            <h2>Manage All Appointments</h2>
+            <p>Filter, edit status, or remove appointments across the entire studio calendar.</p>
+          </div>
+          <a href="booking.html" class="btn btn-primary btn-sm">+ Manual Booking</a>
+        </div>
+
+        <div class="table-responsive">
+          <table class="data-table">
+            <thead>
+              <tr>
+                <th>Booking ID</th>
+                <th>Client Name</th>
+                <th>Contact</th>
+                <th>Vehicle & Type</th>
+                <th>Date & Time</th>
+                <th>Price</th>
+                <th>Status</th>
+                <th>Action</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td><strong class="text-red">ASH-912384</strong></td>
+                <td>Jonathan Reed</td>
+                <td>555-392-1192</td>
+                <td>Mercedes-AMG GT (Coupe)</td>
+                <td>2026-10-23 • 08:30 AM</td>
+                <td>$499</td>
+                <td>
+                  <select class="form-control admin-status-select" style="padding: 0.3rem 0.6rem; font-size: 0.8rem; width: auto;">
+                    <option value="Confirmed" selected>Confirmed</option>
+                    <option value="In Progress">In Progress</option>
+                    <option value="Completed">Completed</option>
+                    <option value="Cancelled">Cancelled</option>
+                  </select>
+                </td>
+                <td>
+                  <button class="btn btn-outline-red btn-sm btn-admin-delete" data-item="appointment ASH-912384">Delete</button>
+                </td>
+              </tr>
+              <tr>
+                <td><strong class="text-red">ASH-482019</strong></td>
+                <td>Sarah Jenkins</td>
+                <td>555-883-9921</td>
+                <td>Tesla Model S Plaid (Sedan)</td>
+                <td>2026-10-24 • 11:00 AM</td>
+                <td>$249</td>
+                <td>
+                  <select class="form-control admin-status-select" style="padding: 0.3rem 0.6rem; font-size: 0.8rem; width: auto;">
+                    <option value="Pending" selected>Pending</option>
+                    <option value="Confirmed">Confirmed</option>
+                    <option value="Completed">Completed</option>
+                  </select>
+                </td>
+                <td>
+                  <button class="btn btn-outline-red btn-sm btn-admin-delete" data-item="appointment ASH-482019">Delete</button>
+                </td>
+              </tr>
+              <tr>
+                <td><strong class="text-red">ASH-773821</strong></td>
+                <td>Robert DeHavilland</td>
+                <td>555-481-0022</td>
+                <td>Range Rover Autobiography (SUV)</td>
+                <td>2026-10-25 • 01:30 PM</td>
+                <td>$574</td>
+                <td>
+                  <select class="form-control admin-status-select" style="padding: 0.3rem 0.6rem; font-size: 0.8rem; width: auto;">
+                    <option value="Confirmed" selected>Confirmed</option>
+                    <option value="In Progress">In Progress</option>
+                    <option value="Completed">Completed</option>
+                  </select>
+                </td>
+                <td>
+                  <button class="btn btn-outline-red btn-sm btn-admin-delete" data-item="appointment ASH-773821">Delete</button>
+                </td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </section>
+
+      <!-- TAB 3: MANAGE SERVICES -->
+      <section id="adm-services" class="dashboard-tab-content" style="display: none;">
+        <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 2rem; flex-wrap: wrap; gap: 1rem;">
+          <div>
+            <h2>Manage Detailing Services</h2>
+            <p>Update service descriptions, standard duration, and demo base rates.</p>
+          </div>
+          <button class="btn btn-primary btn-sm" onclick="alert('Add Service Modal (Front-End Demo): Fill title, category, duration, and price to create an entry.')">+ Add New Service</button>
+        </div>
+
+        <div class="table-responsive">
+          <table class="data-table">
+            <thead>
+              <tr>
+                <th>Service Name</th>
+                <th>Category</th>
+                <th>Estimated Duration</th>
+                <th>Demo Base Price</th>
+                <th>Status</th>
+                <th>Actions</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td><strong>Exterior Car Wash</strong></td>
+                <td>Exterior</td>
+                <td>1.5 - 2 Hours</td>
+                <td>$49</td>
+                <td><span class="status-badge confirmed">Active</span></td>
+                <td>
+                  <a href="404.html" class="btn btn-secondary btn-sm">Edit</a>
+                  <button class="btn btn-outline-red btn-sm btn-admin-delete" data-item="service 'Exterior Car Wash'">Delete</button>
+                </td>
+              </tr>
+              <tr>
+                <td><strong>Ceramic Coating 9H</strong></td>
+                <td>Protection</td>
+                <td>1 - 2 Days</td>
+                <td>$599</td>
+                <td><span class="status-badge confirmed">Active</span></td>
+                <td>
+                  <a href="404.html" class="btn btn-secondary btn-sm">Edit</a>
+                  <button class="btn btn-outline-red btn-sm btn-admin-delete" data-item="service 'Ceramic Coating 9H'">Delete</button>
+                </td>
+              </tr>
+              <tr>
+                <td><strong>Paint Correction</strong></td>
+                <td>Restoration</td>
+                <td>4 - 6 Hours</td>
+                <td>$349</td>
+                <td><span class="status-badge confirmed">Active</span></td>
+                <td>
+                  <a href="404.html" class="btn btn-secondary btn-sm">Edit</a>
+                  <button class="btn btn-outline-red btn-sm btn-admin-delete" data-item="service 'Paint Correction'">Delete</button>
+                </td>
+              </tr>
+              <tr>
+                <td><strong>Interior Deep Cleaning</strong></td>
+                <td>Interior</td>
+                <td>2.5 - 3 Hours</td>
+                <td>$129</td>
+                <td><span class="status-badge confirmed">Active</span></td>
+                <td>
+                  <a href="404.html" class="btn btn-secondary btn-sm">Edit</a>
+                  <button class="btn btn-outline-red btn-sm btn-admin-delete" data-item="service 'Interior Deep Cleaning'">Delete</button>
+                </td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </section>
+
+      <!-- TAB 4: MANAGE PACKAGES -->
+      <section id="adm-packages" class="dashboard-tab-content" style="display: none;">
+        <h2>Manage Detailing Packages</h2>
+        <p style="margin-bottom: 2rem;">Configure tiered packages and included service features.</p>
+
+        <div class="pricing-grid">
+          <div class="pricing-card">
+            <h3>Essential Shine</h3>
+            <div class="pricing-price"><span class="amount">$99</span></div>
+            <p style="font-size: 0.85rem; margin-bottom: 1.5rem;">5 core maintenance features included.</p>
+            <a href="404.html" class="btn btn-secondary btn-sm btn-block">Edit Package</a>
+          </div>
+          <div class="pricing-card featured">
+            <h3 class="text-red">Premium Detail</h3>
+            <div class="pricing-price"><span class="amount">$249</span></div>
+            <p style="font-size: 0.85rem; margin-bottom: 1.5rem;">7 restorative features included.</p>
+            <a href="404.html" class="btn btn-primary btn-sm btn-block">Edit Package</a>
+          </div>
+          <div class="pricing-card">
+            <h3>Ultimate Protection</h3>
+            <div class="pricing-price"><span class="amount">$499</span></div>
+            <p style="font-size: 0.85rem; margin-bottom: 1.5rem;">9 multi-stage ceramic features.</p>
+            <a href="404.html" class="btn btn-secondary btn-sm btn-block">Edit Package</a>
+          </div>
+        </div>
+      </section>
+
+      <!-- TAB 5: MANAGE CUSTOMERS -->
+      <section id="adm-customers" class="dashboard-tab-content" style="display: none;">
+        <h2>Customer Directory</h2>
+        <p style="margin-bottom: 2rem;">Registered automobile owners and corporate fleet contacts.</p>
+
+        <div class="table-responsive">
+          <table class="data-table">
+            <thead>
+              <tr>
+                <th>Customer</th>
+                <th>Email</th>
+                <th>Phone</th>
+                <th>Garage Vehicles</th>
+                <th>Lifetime Spend</th>
+                <th>Status</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td><strong>Alex Mercer</strong></td>
+                <td>alex.driver@example.com</td>
+                <td>555-749-2886</td>
+                <td>Porsche 911, BMW M3</td>
+                <td>$947</td>
+                <td><span class="status-badge confirmed">VIP</span></td>
+              </tr>
+              <tr>
+                <td><strong>Marcus Vance</strong></td>
+                <td>marcus.v@example.com</td>
+                <td>555-223-8841</td>
+                <td>Porsche 911 GT3 RS</td>
+                <td>$1,498</td>
+                <td><span class="status-badge confirmed">VIP</span></td>
+              </tr>
+              <tr>
+                <td><strong>Elena Rostova</strong></td>
+                <td>elena.r@example.com</td>
+                <td>555-901-4472</td>
+                <td>Audi RS6 Avant</td>
+                <td>$728</td>
+                <td><span class="status-badge progress">Active</span></td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </section>
+
+      <!-- TAB 6: MANAGE GALLERY -->
+      <section id="adm-gallery" class="dashboard-tab-content" style="display: none;">
+        <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 2rem; flex-wrap: wrap; gap: 1rem;">
+          <div>
+            <h2>Manage Portfolio Showcase</h2>
+            <p>Publish or curate high-res vehicle before/after photography.</p>
+          </div>
+          <button class="btn btn-primary btn-sm" onclick="alert('Upload image modal (Demo): Accepts WebP/JPEG under 100KB.')">+ Upload Showcase Entry</button>
+        </div>
+
+        <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 1.5rem;">
+          <div style="background: var(--bg-card); border: 1px solid var(--border-subtle); border-radius: var(--radius-md); overflow: hidden;">
+            <img src="assets/images/hero-car.webp" alt="Porsche GT3" style="height: 140px; width: 100%; object-fit: cover;">
+            <div style="padding: 1rem;">
+              <h4>Porsche GT3 RS Ceramic</h4>
+              <span style="font-size: 0.8rem; color: var(--silver-mid);">Category: Exotics</span>
+              <div style="margin-top: 0.8rem; display: flex; gap: 0.5rem;">
+                <a href="404.html" class="btn btn-secondary btn-sm" style="flex: 1;">Edit</a>
+                <button class="btn btn-outline-red btn-sm btn-admin-delete" data-item="gallery entry">Delete</button>
+              </div>
+            </div>
+          </div>
+          <div style="background: var(--bg-card); border: 1px solid var(--border-subtle); border-radius: var(--radius-md); overflow: hidden;">
+            <img src="assets/images/service-interior-clean.webp" alt="Interior Rejuvenation" style="height: 140px; width: 100%; object-fit: cover;">
+            <div style="padding: 1rem;">
+              <h4>Cockpit Leather Rejuvenation</h4>
+              <span style="font-size: 0.8rem; color: var(--silver-mid);">Category: Interior</span>
+              <div style="margin-top: 0.8rem; display: flex; gap: 0.5rem;">
+                <a href="404.html" class="btn btn-secondary btn-sm" style="flex: 1;">Edit</a>
+                <button class="btn btn-outline-red btn-sm btn-admin-delete" data-item="gallery entry">Delete</button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- TAB 7: CUSTOMER REVIEWS -->
+      <section id="adm-reviews" class="dashboard-tab-content" style="display: none;">
+        <h2>Customer Testimonial Moderation</h2>
+        <p style="margin-bottom: 2rem;">Approve or moderate submitted client feedback.</p>
+
+        <div style="display: flex; flex-direction: column; gap: 1rem;">
+          <div style="background: var(--bg-card); border: 1px solid var(--border-subtle); border-radius: var(--radius-md); padding: 1.5rem;">
+            <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 0.5rem;">
+              <strong>Marcus Vance (Porsche 911 GT3)</strong>
+              <span class="status-badge confirmed">Approved</span>
+            </div>
+            <div style="color: #fbbf24; margin-bottom: 0.5rem;">★★★★★</div>
+            <p style="font-size: 0.9rem; margin: 0;">“My 911 had heavy swirl marks from previous automated car washes. AutoShine made the paint look deeper and glossier than showroom delivery.”</p>
+          </div>
+          <div style="background: var(--bg-card); border: 1px solid var(--border-subtle); border-radius: var(--radius-md); padding: 1.5rem;">
+            <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 0.5rem;">
+              <strong>Elena Rostova (Audi RS6)</strong>
+              <span class="status-badge confirmed">Approved</span>
+            </div>
+            <div style="color: #fbbf24; margin-bottom: 0.5rem;">★★★★★</div>
+            <p style="font-size: 0.9rem; margin: 0;">“The interior deep clean was astonishing. Two kids and two dogs left stains I thought were permanent. AutoShine restored the leather to perfection.”</p>
+          </div>
+        </div>
+      </section>
+
+      <!-- TAB 8: REPORTS -->
+      <section id="adm-reports" class="dashboard-tab-content" style="display: none;">
+        <h2>Financial & Volume Reports</h2>
+        <p style="margin-bottom: 2rem;">Breakdown of studio volume, customer retention, and treatment popularity.</p>
+
+        <div class="two-col-grid" style="margin-bottom: 2rem;">
+          <div style="background: var(--bg-card); border: 1px solid var(--border-subtle); border-radius: var(--radius-lg); padding: 2rem;">
+            <h4>Revenue By Treatment Class</h4>
+            <div style="margin-top: 1.5rem;">
+              <div style="display: flex; justify-content: space-between; font-size: 0.88rem; margin-bottom: 0.3rem;">
+                <span>9H Ceramic Coating</span>
+                <strong>45% ($17,289)</strong>
+              </div>
+              <div style="height: 10px; background: var(--bg-tertiary); border-radius: 999px; overflow: hidden; margin-bottom: 1.2rem;">
+                <div style="width: 45%; height: 100%; background: var(--red-primary);"></div>
+              </div>
+
+              <div style="display: flex; justify-content: space-between; font-size: 0.88rem; margin-bottom: 0.3rem;">
+                <span>Paint Correction</span>
+                <strong>28% ($10,757)</strong>
+              </div>
+              <div style="height: 10px; background: var(--bg-tertiary); border-radius: 999px; overflow: hidden; margin-bottom: 1.2rem;">
+                <div style="width: 28%; height: 100%; background: #3b82f6;"></div>
+              </div>
+
+              <div style="display: flex; justify-content: space-between; font-size: 0.88rem; margin-bottom: 0.3rem;">
+                <span>Interior Deep Extraction</span>
+                <strong>17% ($6,531)</strong>
+              </div>
+              <div style="height: 10px; background: var(--bg-tertiary); border-radius: 999px; overflow: hidden; margin-bottom: 1.2rem;">
+                <div style="width: 17%; height: 100%; background: #10b981;"></div>
+              </div>
+
+              <div style="display: flex; justify-content: space-between; font-size: 0.88rem; margin-bottom: 0.3rem;">
+                <span>Maintenance Washes</span>
+                <strong>10% ($3,843)</strong>
+              </div>
+              <div style="height: 10px; background: var(--bg-tertiary); border-radius: 999px; overflow: hidden;">
+                <div style="width: 10%; height: 100%; background: #f59e0b;"></div>
+              </div>
+            </div>
+          </div>
+
+          <div style="background: var(--bg-card); border: 1px solid var(--border-subtle); border-radius: var(--radius-lg); padding: 2rem;">
+            <h4>Monthly Capacity Utilization</h4>
+            <div style="margin-top: 1.5rem; display: flex; flex-direction: column; gap: 1rem;">
+              <div>
+                <span style="font-size: 0.85rem; color: var(--silver-mid);">Average Turnaround Time:</span>
+                <strong style="display: block; font-size: 1.4rem; color: #fff;">4.2 Hours / Vehicle</strong>
+              </div>
+              <div>
+                <span style="font-size: 0.85rem; color: var(--silver-mid);">Studio Bay Efficiency:</span>
+                <strong style="display: block; font-size: 1.4rem; color: #10b981;">94.6% On-Schedule</strong>
+              </div>
+              <div>
+                <span style="font-size: 0.85rem; color: var(--silver-mid);">Customer Return Rate:</span>
+                <strong style="display: block; font-size: 1.4rem; color: var(--red-primary);">82% Recurring</strong>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- TAB 9: SETTINGS -->
+      <section id="adm-settings" class="dashboard-tab-content" style="display: none;">
+        <h2>Studio System Settings</h2>
+        <p style="margin-bottom: 2rem;">Configure studio hours, notification gateways, and demo data resets.</p>
+
+        <div class="booking-form-card" style="max-width: 650px;">
+          <form onsubmit="event.preventDefault(); showToast('Studio settings saved.', 'success');">
+            <div class="form-group">
+              <label class="form-label">Studio Legal Name</label>
+              <input type="text" class="form-control" value="AutoShine Automotive Care LLC">
+            </div>
+
+            <div class="form-group">
+              <label class="form-label">Physical Address</label>
+              <input type="text" class="form-control" value="404 Apex Boulevard, Sector 12, Motor City">
+            </div>
+
+            <div class="form-row">
+              <div class="form-group">
+                <label class="form-label">Contact Phone</label>
+                <input type="tel" class="form-control" value="5557492886">
+              </div>
+              <div class="form-group">
+                <label class="form-label">Operating Bays</label>
+                <input type="number" class="form-control" value="4">
+              </div>
+            </div>
+
+            <div style="margin: 1.5rem 0; padding-top: 1rem; border-top: 1px solid var(--border-subtle);">
+              <button type="button" class="btn btn-outline-red btn-sm" onclick="localStorage.removeItem('autoshine_bookings'); showToast('Demo bookings reset to defaults.', 'info');">
+                Reset Demo Appointments Data
+              </button>
+            </div>
+
+            <button type="submit" class="btn btn-primary">Save Studio Configuration</button>
+          </form>
+        </div>
+      </section>
+
+    </main>
+  </div>
+
+  <script src="js/script.js"></script>
+</body>
+</html>

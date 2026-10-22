@@ -1,0 +1,808 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>AutoShine — Luxury Car Detailing & Automotive Care</title>
+  <meta name="description" content="AutoShine provides premier automotive detailing, 9H ceramic coatings, multi-stage paint correction, and luxury vehicle care. Restore the shine, protect the drive.">
+  <link rel="icon" type="image/svg+xml" href="assets/images/favicon.svg">
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+  <!-- Navigation Bar -->
+  <header class="navbar">
+    <div class="container navbar-container">
+      <a href="index.html" class="brand-logo" aria-label="AutoShine Homepage">
+        <img src="assets/images/logo-dark.png" alt="Stackly Logo" width="144" height="40">
+      </a>
+
+      <nav class="nav-menu" aria-label="Main Navigation">
+        <a href="index.html" class="nav-link active">Home</a>
+        <a href="about.html" class="nav-link">About</a>
+        <a href="services.html" class="nav-link">Services</a>
+        <a href="packages.html" class="nav-link">Packages</a>
+        <a href="gallery.html" class="nav-link">Gallery</a>
+        <a href="before-after.html" class="nav-link">Before & After</a>
+        <a href="contact.html" class="nav-link">Contact</a>
+      </nav>
+
+      <div class="nav-actions">
+        <a href="login.html" class="btn-login-link">Login</a>
+        <a href="booking.html" class="btn btn-primary btn-sm">Book Now</a>
+        <button class="hamburger" aria-label="Toggle navigation menu" aria-expanded="false">
+          <span></span>
+          <span></span>
+          <span></span>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <!-- Mobile Drawer Overlay & Drawer -->
+  <div class="mobile-drawer-overlay"></div>
+  <aside class="mobile-drawer" aria-label="Mobile Navigation Drawer">
+    <div class="mobile-drawer-header">
+      <a href="index.html" class="brand-logo" aria-label="AutoShine Homepage">
+        <img src="assets/images/logo-footer.png" alt="Stackly Logo" width="130" height="34">
+      </a>
+      <button class="mobile-drawer-close" aria-label="Close navigation menu">✕</button>
+    </div>
+    <div class="mobile-drawer-links">
+      <a href="index.html" class="nav-link active">Home <span>→</span></a>
+      <a href="about.html" class="nav-link">About Us <span>→</span></a>
+      <a href="services.html" class="nav-link">Services <span>→</span></a>
+      <a href="packages.html" class="nav-link">Packages & Pricing <span>→</span></a>
+      <a href="gallery.html" class="nav-link">Gallery <span>→</span></a>
+      <a href="before-after.html" class="nav-link">Before & After <span>→</span></a>
+      <a href="contact.html" class="nav-link">Locations & Contact <span>→</span></a>
+      <a href="login.html" class="nav-link">Account Login <span>→</span></a>
+    </div>
+    <div class="mobile-drawer-footer">
+      <a href="booking.html" class="btn btn-primary btn-block">Book an Appointment</a>
+      <div class="mobile-drawer-contact">
+        <p class="drawer-contact-item">
+          <span>📍</span> 404 Apex Blvd, Motor City
+        </p>
+        <p class="drawer-contact-item">
+          <span>📞</span> <a href="tel:5557492886">(555) 749-2886</a>
+        </p>
+        <p class="drawer-contact-item">
+          <span>✉️</span> <a href="mailto:concierge@autoshine-demo.com">concierge@autoshine-demo.com</a>
+        </p>
+      </div>
+    </div>
+  </aside>
+
+  <main>
+    <!-- 1. Hero Section -->
+    <section class="hero-section">
+      <div class="hero-bg"></div>
+      <div class="container hero-grid">
+        <div class="hero-content">
+          <span class="section-tag">Precision Automotive Aesthetics</span>
+          <h1>Restore the Shine.<br><span class="text-gradient">Protect the Drive.</span></h1>
+          <p>
+            Experience master-level automotive detailing engineered for perfection. From precision multi-stage paint correction to hydrophobic 9H ceramic coatings, AutoShine safeguards your vehicle with unmatched brilliance.
+          </p>
+          <div class="hero-actions">
+            <a href="booking.html" class="btn btn-primary btn-lg">Book a Service</a>
+            <a href="services.html" class="btn btn-secondary btn-lg">Explore Services</a>
+          </div>
+          <div class="hero-stats">
+            <div class="stat-item">
+              <h3 class="text-gradient">3,500+</h3>
+              <span>Vehicles Perfected</span>
+            </div>
+            <div class="stat-item">
+              <h3 class="text-gradient">99.8%</h3>
+              <span>Client Satisfaction</span>
+            </div>
+            <div class="stat-item">
+              <h3 class="text-gradient">100%</h3>
+              <span>Guaranteed Quality</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="hero-image-wrap">
+          <div class="hero-image-frame">
+            <img 
+              src="assets/images/hero-car.webp" 
+              alt="High performance luxury sports car with glossy ceramic finish" 
+              width="850" 
+              height="550" 
+              loading="eager" 
+              fetchpriority="high"
+            >
+          </div>
+          <div class="hero-badge-floating">
+            <div style="width: 14px; height: 14px; border-radius: 50%; background: #10b981; box-shadow: 0 0 10px #10b981;"></div>
+            <div>
+              <strong style="display: block; font-size: 0.95rem; color: #ffffff;">Authorized Detailer</strong>
+              <span style="font-size: 0.78rem; color: var(--silver-mid);">Certified 9H Ceramic Applicators</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 2. Trust Highlights -->
+    <section class="trust-bar">
+      <div class="container">
+        <div class="trust-grid">
+          <div class="trust-card">
+            <div class="trust-icon">★</div>
+            <div class="trust-info">
+              <h4>Master Technicians</h4>
+              <p>Certified IDA detailers with over a decade of precision craft.</p>
+            </div>
+          </div>
+          <div class="trust-card">
+            <div class="trust-icon">🛡</div>
+            <div class="trust-info">
+              <h4>Premium Products</h4>
+              <p>Top-tier German compounds, 9H nano-coatings & pH-neutral care.</p>
+            </div>
+          </div>
+          <div class="trust-card">
+            <div class="trust-icon">💎</div>
+            <div class="trust-info">
+              <h4>Quality Detailing</h4>
+              <p>Multi-point rigorous inspection before every vehicle handover.</p>
+            </div>
+          </div>
+          <div class="trust-card">
+            <div class="trust-icon">✔</div>
+            <div class="trust-info">
+              <h4>Customer Satisfaction</h4>
+              <p>Transparent demo pricing, punctuality, and complete peace of mind.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 3. Our Services (Flagship 6) -->
+    <section class="section-padding">
+      <div class="container">
+        <div class="section-header">
+          <span class="section-tag">Our Detailing Expertise</span>
+          <h2>Comprehensive Automotive Care</h2>
+          <p>Tailored treatments designed to restore factory brilliance and preserve long-term vehicle equity.</p>
+        </div>
+
+        <div class="services-grid">
+          <!-- Service 1 -->
+          <article class="service-card">
+            <div class="service-card-media">
+              <img src="assets/images/service-exterior-wash.webp" alt="Hand exterior foam wash" loading="lazy">
+              <span class="service-badge">Exterior</span>
+            </div>
+            <div class="service-card-body">
+              <h3>Exterior Car Wash</h3>
+              <p>Two-bucket scratch-free hand wash, foam cannon pre-soak, wheel decontamination, and plush microfiber dry.</p>
+              <div class="service-meta">
+                <span class="service-duration">⏱ 1.5 - 2 Hours</span>
+                <div class="service-price">
+                  <span>Starting at</span>
+                  <strong>$49*</strong>
+                </div>
+              </div>
+              <div class="demo-pricing-tag">*Configurable demo pricing</div>
+              <a href="booking.html?service=wash" class="btn btn-outline-red btn-block">Book Service</a>
+            </div>
+          </article>
+
+          <!-- Service 2 -->
+          <article class="service-card">
+            <div class="service-card-media">
+              <img src="assets/images/service-interior-clean.webp" alt="Pristine interior cockpit cleaning" loading="lazy">
+              <span class="service-badge">Interior</span>
+            </div>
+            <div class="service-card-body">
+              <h3>Interior Deep Cleaning</h3>
+              <p>High-temperature steam extraction, leather conditioning, AC vent disinfection, and streak-free glass clarity.</p>
+              <div class="service-meta">
+                <span class="service-duration">⏱ 2.5 - 3 Hours</span>
+                <div class="service-price">
+                  <span>Starting at</span>
+                  <strong>$129*</strong>
+                </div>
+              </div>
+              <div class="demo-pricing-tag">*Configurable demo pricing</div>
+              <a href="booking.html?service=interior" class="btn btn-outline-red btn-block">Book Service</a>
+            </div>
+          </article>
+
+          <!-- Service 3 -->
+          <article class="service-card">
+            <div class="service-card-media">
+              <img src="assets/images/service-paint-correction.webp" alt="Machine rotary paint correction" loading="lazy">
+              <span class="service-badge">Restoration</span>
+            </div>
+            <div class="service-card-body">
+              <h3>Paint Correction</h3>
+              <p>Precision dual-action machine polishing that safely eliminates up to 95% of swirl marks, scratches, and oxidation.</p>
+              <div class="service-meta">
+                <span class="service-duration">⏱ 4 - 6 Hours</span>
+                <div class="service-price">
+                  <span>Starting at</span>
+                  <strong>$349*</strong>
+                </div>
+              </div>
+              <div class="demo-pricing-tag">*Configurable demo pricing</div>
+              <a href="booking.html?service=correction" class="btn btn-outline-red btn-block">Book Service</a>
+            </div>
+          </article>
+
+          <!-- Service 4 -->
+          <article class="service-card">
+            <div class="service-card-media">
+              <img src="assets/images/service-ceramic-coating.webp" alt="Hydrophobic ceramic water beading" loading="lazy">
+              <span class="service-badge">Protection</span>
+            </div>
+            <div class="service-card-body">
+              <h3>Ceramic Coating</h3>
+              <p>Semi-permanent 9H nano-ceramic barrier providing extreme hydrophobic gloss, UV defense, and chemical resistance.</p>
+              <div class="service-meta">
+                <span class="service-duration">⏱ 1 - 2 Days</span>
+                <div class="service-price">
+                  <span>Starting at</span>
+                  <strong>$599*</strong>
+                </div>
+              </div>
+              <div class="demo-pricing-tag">*Configurable demo pricing</div>
+              <a href="booking.html?service=ceramic" class="btn btn-outline-red btn-block">Book Service</a>
+            </div>
+          </article>
+
+          <!-- Service 5 -->
+          <article class="service-card">
+            <div class="service-card-media">
+              <img src="assets/images/service-wax-polish.webp" alt="Waxing and mirror buffing" loading="lazy">
+              <span class="service-badge">Finishing</span>
+            </div>
+            <div class="service-card-body">
+              <h3>Waxing and Polishing</h3>
+              <p>Brazilian carnauba wax application paired with jeweled finishing glaze to produce a wet, mirror-like gloss.</p>
+              <div class="service-meta">
+                <span class="service-duration">⏱ 2 Hours</span>
+                <div class="service-price">
+                  <span>Starting at</span>
+                  <strong>$99*</strong>
+                </div>
+              </div>
+              <div class="demo-pricing-tag">*Configurable demo pricing</div>
+              <a href="booking.html?service=wax" class="btn btn-outline-red btn-block">Book Service</a>
+            </div>
+          </article>
+
+          <!-- Service 6 -->
+          <article class="service-card">
+            <div class="service-card-media">
+              <img src="assets/images/service-full-detail.webp" alt="Master complete full detailing studio" loading="lazy">
+              <span class="service-badge">All-Inclusive</span>
+            </div>
+            <div class="service-card-body">
+              <h3>Full Car Detailing</h3>
+              <p>The total vehicle rejuvenation: full interior extraction, multi-stage paint rejuvenation, engine bay dress, and sealant.</p>
+              <div class="service-meta">
+                <span class="service-duration">⏱ 5 - 7 Hours</span>
+                <div class="service-price">
+                  <span>Starting at</span>
+                  <strong>$199*</strong>
+                </div>
+              </div>
+              <div class="demo-pricing-tag">*Configurable demo pricing</div>
+              <a href="booking.html?service=full-detail" class="btn btn-outline-red btn-block">Book Service</a>
+            </div>
+          </article>
+        </div>
+
+        <div style="text-align: center; margin-top: 3rem;">
+          <a href="services.html" class="btn btn-secondary">View All 10 Detailing Services <span>→</span></a>
+        </div>
+      </div>
+    </section>
+
+    <!-- 4. Featured Packages -->
+    <section class="section-padding" style="background: var(--bg-secondary);">
+      <div class="container">
+        <div class="section-header">
+          <span class="section-tag">Care Packages</span>
+          <h2>Tailored Detailing Packages</h2>
+          <p>Choose the level of precision that matches your vehicle's condition and preservation goals.</p>
+        </div>
+
+        <div class="pricing-grid">
+          <!-- Essential Shine -->
+          <div class="pricing-card">
+            <div class="pricing-header">
+              <h3>Essential Shine</h3>
+              <p>Ideal for regular maintenance and refreshing daily drivers.</p>
+              <div class="pricing-price">
+                <span class="currency">$</span>
+                <span class="amount">99</span>
+                <span class="duration">/ session</span>
+              </div>
+              <div class="demo-pricing-tag">*Configurable demo pricing</div>
+            </div>
+            <ul class="pricing-features">
+              <li><span>✔</span> Premium pH-neutral exterior foam wash</li>
+              <li><span>✔</span> Deep wheel cleaning & tire dressing</li>
+              <li><span>✔</span> Complete interior vacuuming</li>
+              <li><span>✔</span> Dashboard & console wipe-down</li>
+              <li><span>✔</span> Streak-free glass cleaning inside & out</li>
+              <li class="excluded"><span>✕</span> Paint machine polish</li>
+              <li class="excluded"><span>✕</span> 9H Ceramic coating</li>
+            </ul>
+            <a href="booking.html?package=essential" class="btn btn-secondary btn-block">Select Essential</a>
+          </div>
+
+          <!-- Premium Detail (Featured) -->
+          <div class="pricing-card featured">
+            <div class="pricing-badge-popular">Most Popular</div>
+            <div class="pricing-header">
+              <h3 class="text-red">Premium Detail</h3>
+              <p>In-depth rejuvenation for vehicles requiring deep care.</p>
+              <div class="pricing-price">
+                <span class="currency">$</span>
+                <span class="amount">249</span>
+                <span class="duration">/ session</span>
+              </div>
+              <div class="demo-pricing-tag">*Configurable demo pricing</div>
+            </div>
+            <ul class="pricing-features">
+              <li><span>✔</span> Everything in Essential Shine</li>
+              <li><span>✔</span> Deep steam cleaning & stain extraction</li>
+              <li><span>✔</span> Leather conditioning & UV protection</li>
+              <li><span>✔</span> Single-stage gloss enhancement polish</li>
+              <li><span>✔</span> Wheel barrel and brake caliper detailing</li>
+              <li><span>✔</span> 6-Month protective polymer sealant</li>
+              <li class="excluded"><span>✕</span> Multi-year 9H ceramic coating</li>
+            </ul>
+            <a href="booking.html?package=premium" class="btn btn-primary btn-block">Select Premium</a>
+          </div>
+
+          <!-- Ultimate Protection -->
+          <div class="pricing-card">
+            <div class="pricing-header">
+              <h3>Ultimate Protection</h3>
+              <p>The pinnacle of restoration and permanent surface protection.</p>
+              <div class="pricing-price">
+                <span class="currency">$</span>
+                <span class="amount">499</span>
+                <span class="duration">/ session</span>
+              </div>
+              <div class="demo-pricing-tag">*Configurable demo pricing</div>
+            </div>
+            <ul class="pricing-features">
+              <li><span>✔</span> Complete interior & exterior bespoke overhaul</li>
+              <li><span>✔</span> 2-Stage paint correction (90%+ swirl removal)</li>
+              <li><span>✔</span> 2-Year 9H ceramic coating on paint</li>
+              <li><span>✔</span> Hydrophobic windshield glass treatment</li>
+              <li><span>✔</span> Ceramic wheel face coating</li>
+              <li><span>✔</span> Engine bay steam clean and dressing</li>
+              <li><span>✔</span> Complimentary 6-month checkup</li>
+            </ul>
+            <a href="booking.html?package=ultimate" class="btn btn-secondary btn-block">Select Ultimate</a>
+          </div>
+        </div>
+
+        <div style="text-align: center; margin-top: 2.5rem;">
+          <a href="packages.html" class="btn btn-outline-red">Compare Full Package Matrix <span>→</span></a>
+        </div>
+      </div>
+    </section>
+
+    <!-- 5. Before and After Gallery (Interactive Slider & Showcase) -->
+    <section class="section-padding">
+      <div class="container">
+        <div class="section-header">
+          <span class="section-tag">Transformation Proof</span>
+          <h2>Before & After Gallery</h2>
+          <p>Drag the slider below to witness how our precision paint correction eliminates years of swirl marks and restores mirror reflections.</p>
+        </div>
+
+        <!-- Interactive Slider Component -->
+        <div class="ba-container">
+          <div class="ba-image ba-after">
+            <img src="assets/images/ba-paint-after.webp" alt="After: Flawless mirror gloss paint correction" loading="lazy">
+            <span class="ba-label label-after">After AutoShine</span>
+          </div>
+          <div class="ba-image ba-before">
+            <img src="assets/images/ba-paint-before.webp" alt="Before: Swirled and oxidized car paint" loading="lazy">
+            <span class="ba-label label-before">Before Detailing</span>
+          </div>
+          <div class="ba-handle">
+            <div class="ba-handle-button">↔</div>
+          </div>
+        </div>
+
+        <div style="text-align: center; margin-top: 2.5rem;">
+          <p class="text-silver" style="font-size: 0.95rem;">
+            Interactive comparison demo: Click or drag the divider above horizontally to inspect results.
+          </p>
+          <a href="before-after.html" class="btn btn-secondary" style="margin-top: 1rem;">View All Transformations (Headlights, Wheels, Interiors) <span>→</span></a>
+        </div>
+      </div>
+    </section>
+
+    <!-- INNOVATIVE SECTION: Live Paint Telemetry & Finish Visualizer -->
+    <section class="section-padding" style="padding-top: 1rem;">
+      <div class="container">
+        <div class="telemetry-container">
+          <div class="telemetry-grid">
+            <div>
+              <span class="section-tag">Interactive Laboratory Telemetry</span>
+              <h2>Virtual Finish & <span class="text-gradient">Gloss Visualizer</span></h2>
+              <p>
+                Experience the science behind light refraction and molecular hydrophobic barriers. Toggle the treatment modes below to inspect laboratory-calibrated gloss meter readings and water droplet deflection.
+              </p>
+
+              <div class="telemetry-modes">
+                <button class="telemetry-btn" data-mode="raw">1. Raw Factory Paint</button>
+                <button class="telemetry-btn" data-mode="polish">2. Jeweled Polish</button>
+                <button class="telemetry-btn active" data-mode="ceramic">3. 9H Nano Ceramic</button>
+              </div>
+
+              <div style="background: var(--bg-secondary); border: 1px solid var(--border-subtle); border-radius: var(--radius-md); padding: 1.4rem;">
+                <h4 id="glossModeTitle" style="color: var(--silver-bright); font-size: 1.15rem; margin-bottom: 0.4rem;">
+                  9H Nano-Diamond Ceramic Matrix
+                </h4>
+                <p id="glossModeDesc" style="font-size: 0.9rem; margin-bottom: 0; color: var(--silver-mid);">
+                  Extreme glass reflectivity with hydrophobic self-cleaning tension. Water beads roll off at 115° contact angles carrying road dirt away.
+                </p>
+              </div>
+            </div>
+
+            <!-- Gauge Box -->
+            <div class="gloss-gauge-box">
+              <span style="font-family: var(--font-heading); font-size: 0.8rem; letter-spacing: 0.1em; color: var(--red-primary); text-transform: uppercase; font-weight: 800;">
+                Micro-Gloss Reflection Meter
+              </span>
+              
+              <div style="margin: 1rem 0;">
+                <div class="gloss-score">
+                  <span id="glossScoreVal">99.8</span><span style="font-size: 1.8rem; font-weight: 600; color: var(--silver-mid);"> GU</span>
+                </div>
+                <span style="font-size: 0.8rem; color: var(--silver-mid);">Gloss Units (Standard ISO 2813 at 60° Angle)</span>
+              </div>
+
+              <div class="gloss-scale-bar">
+                <div id="glossScaleFill" class="gloss-scale-fill"></div>
+              </div>
+              <div style="display: flex; justify-content: space-between; font-size: 0.72rem; color: var(--silver-dark); font-family: var(--font-heading);">
+                <span>0 GU (Matte)</span>
+                <span>50 GU (Satin)</span>
+                <span>100 GU (Pure Mirror)</span>
+              </div>
+
+              <!-- Water Droplet Physics Simulator -->
+              <div class="droplet-viz">
+                <div id="dropletCircle" class="droplet-circle"></div>
+                <div style="text-align: left;">
+                  <span style="font-size: 0.75rem; text-transform: uppercase; color: var(--silver-dark); display: block;">Hydrophobic Contact Angle</span>
+                  <strong id="contactAngleVal" style="font-family: var(--font-heading); font-size: 1.25rem; color: #fff;">115° Pearl Bead</strong>
+                </div>
+              </div>
+
+              <div style="margin-top: 1.5rem;">
+                <a href="booking.html?service=ceramic" class="btn btn-primary btn-sm btn-block">Lock In 99.8 GU Gloss</a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 6. Why Choose AutoShine -->
+    <section class="section-padding" style="background: var(--bg-secondary);">
+      <div class="container">
+        <div class="section-header">
+          <span class="section-tag">The AutoShine Difference</span>
+          <h2>Why Automotive Enthusiasts Choose Us</h2>
+          <p>We treat every vehicle as an engineering masterpiece deserving surgical attention.</p>
+        </div>
+
+        <div class="features-grid">
+          <div class="feature-box">
+            <div class="feature-icon-wrap">⚙</div>
+            <h3>Master Craftsmanship</h3>
+            <p>Our detailers hold internationally recognized certifications and adhere to strict laboratory-clean standards.</p>
+          </div>
+          <div class="feature-box">
+            <div class="feature-icon-wrap">🛡</div>
+            <h3>Premium Materials</h3>
+            <p>We exclusively use industry-leading ceramic coatings, biodegradable pH-neutral soaps, and ultra-plush microfibers.</p>
+          </div>
+          <div class="feature-box">
+            <div class="feature-icon-wrap">🔍</div>
+            <h3>Obsessive Attention</h3>
+            <p>From emblems and wheel barrels to leather seams, no square millimeter is overlooked or rushed.</p>
+          </div>
+          <div class="feature-box">
+            <div class="feature-icon-wrap">⏱</div>
+            <h3>Reliable Service</h3>
+            <p>Seamless online booking, punctual delivery schedules, and clear vehicle condition reporting.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 7. Our Process -->
+    <section class="section-padding">
+      <div class="container">
+        <div class="section-header">
+          <span class="section-tag">Step-by-Step Excellence</span>
+          <h2>Our 5-Stage Detailing Process</h2>
+          <p>A systematic workflow that guarantees repeatable, flawless outcomes on every automobile.</p>
+        </div>
+
+        <div class="process-timeline">
+          <div class="process-step">
+            <div class="process-number">01</div>
+            <h4>Inspection</h4>
+            <p>Comprehensive digital paint gauge measurement and lighting assessment.</p>
+          </div>
+          <div class="process-step">
+            <div class="process-number">02</div>
+            <h4>Decontamination</h4>
+            <p>Clay bar treatment and chemical iron remover to purge embedded road grit.</p>
+          </div>
+          <div class="process-step">
+            <div class="process-number">03</div>
+            <h4>Correction</h4>
+            <p>Multi-stage machine buffing to level clear coat defects and restore clarity.</p>
+          </div>
+          <div class="process-step">
+            <div class="process-number">04</div>
+            <h4>Protection</h4>
+            <p>Application of 9H ceramic coating or synthetic sealants for lasting armor.</p>
+          </div>
+          <div class="process-step">
+            <div class="process-number">05</div>
+            <h4>Quality Check</h4>
+            <p>Final high-CRI inspection under specialized studio lighting before handover.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 8. Featured Vehicles -->
+    <section class="section-padding" style="background: var(--bg-secondary);">
+      <div class="container">
+        <div class="section-header">
+          <span class="section-tag">Tailored for Every Class</span>
+          <h2>Vehicles We Frequently Protect</h2>
+          <p>Whether you drive a daily commuter, a family SUV, or an exotic track weapon, our care is tailored for you.</p>
+        </div>
+
+        <div class="vehicles-grid">
+          <div class="vehicle-card">
+            <img src="assets/images/gallery-5.webp" alt="Luxury Sports Car" loading="lazy">
+            <div class="vehicle-card-body">
+              <h4>Exotics & Sports Cars</h4>
+              <span>Porsche, Ferrari, McLaren & Corvette</span>
+            </div>
+          </div>
+          <div class="vehicle-card">
+            <img src="assets/images/gallery-2.webp" alt="Executive Sedan" loading="lazy">
+            <div class="vehicle-card-body">
+              <h4>Executive Sedans</h4>
+              <span>BMW M-Series, Mercedes-AMG, Audi RS</span>
+            </div>
+          </div>
+          <div class="vehicle-card">
+            <img src="assets/images/gallery-3.webp" alt="Premium SUV" loading="lazy">
+            <div class="vehicle-card-body">
+              <h4>Luxury SUVs & Trucks</h4>
+              <span>Range Rover, Porsche Cayenne, G-Wagon</span>
+            </div>
+          </div>
+          <div class="vehicle-card">
+            <img src="assets/images/gallery-1.webp" alt="Everyday Performance Vehicles" loading="lazy">
+            <div class="vehicle-card-body">
+              <h4>Everyday Vehicles</h4>
+              <span>Tesla, Honda, Toyota & Golf GTI</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 9. Customer Reviews -->
+    <section class="section-padding">
+      <div class="container">
+        <div class="section-header">
+          <span class="section-tag">Verified Testimonials</span>
+          <h2>What Drivers Say About AutoShine</h2>
+          <p>Real stories from passionate automotive owners who trust us with their pride and joy.</p>
+        </div>
+
+        <div class="reviews-grid">
+          <div class="review-card">
+            <div class="review-rating">★★★★★</div>
+            <p>“My 911 had heavy swirl marks from previous automated car washes. AutoShine's paint correction and ceramic coating made the paint look deeper and glossier than the day I drove it off the showroom floor.”</p>
+            <div class="reviewer">
+              <img src="assets/images/technician-1.webp" alt="Marcus Vance" class="reviewer-avatar">
+              <div class="reviewer-info">
+                <h4>Marcus Vance</h4>
+                <span>Porsche 911 GT3 Owner</span>
+              </div>
+            </div>
+          </div>
+
+          <div class="review-card">
+            <div class="review-rating">★★★★★</div>
+            <p>“The interior deep clean was astonishing. Two kids and two dogs had left stains I thought were permanent. AutoShine restored the leather and carpets to absolute perfection without any overpowering chemical smell.”</p>
+            <div class="reviewer">
+              <img src="assets/images/technician-2.webp" alt="Elena Rostova" class="reviewer-avatar">
+              <div class="reviewer-info">
+                <h4>Elena Rostova</h4>
+                <span>Audi RS6 Avant Owner</span>
+              </div>
+            </div>
+          </div>
+
+          <div class="review-card">
+            <div class="review-rating">★★★★★</div>
+            <p>“Punctual, professional, and obsessed with the details that most shops skip. The water beading on the ceramic coating months later is still razor sharp. Simply the best detailing studio in the city.”</p>
+            <div class="reviewer">
+              <img src="assets/images/technician-3.webp" alt="David Sterling" class="reviewer-avatar">
+              <div class="reviewer-info">
+                <h4>David Sterling</h4>
+                <span>BMW M4 Competition Owner</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+        <!-- New Section 11: Interactive Automotive Detailing Knowledge & FAQs -->
+    <section class="section-padding" style="background: var(--bg-secondary); border-top: 1px solid var(--border-subtle); border-bottom: 1px solid var(--border-subtle);">
+      <div class="container">
+        <div class="section-header">
+          <span class="section-tag">Expert Answers</span>
+          <h2>Frequently Asked Automotive Care Questions</h2>
+          <p>Everything you need to know about our paint correction, ceramic coatings, and studio care standards.</p>
+        </div>
+
+        <div style="max-width: 820px; margin: 0 auto; display: flex; flex-direction: column; gap: 1rem;">
+          <div class="faq-item" style="background: var(--bg-card); border: 1px solid var(--border-subtle); border-radius: var(--radius-md); overflow: hidden;">
+            <button class="faq-trigger" style="width: 100%; text-align: left; padding: 1.4rem 1.6rem; display: flex; justify-content: space-between; align-items: center; font-family: var(--font-heading); font-size: 1.1rem; font-weight: 700; color: #fff;">
+              What is the key difference between car wax and 9H ceramic coating?
+              <span class="text-red" style="font-size: 1.3rem;">+</span>
+            </button>
+            <div class="faq-body" style="padding: 0 1.6rem 1.4rem 1.6rem; color: var(--silver-mid); font-size: 0.95rem; line-height: 1.6;">
+              Traditional carnauba wax sits on top of your paintwork as an organic layer that washes away within 4 to 8 weeks, especially under heat and road detergent exposure. A 9H nano-ceramic coating chemically cross-links with the clear coat at a molecular level, forming a semi-permanent, glass-like quartz shield that resists UV degradation, bird lime etching, and high-temperature brake dust for up to 5 full years.
+            </div>
+          </div>
+
+          <div class="faq-item" style="background: var(--bg-card); border: 1px solid var(--border-subtle); border-radius: var(--radius-md); overflow: hidden;">
+            <button class="faq-trigger" style="width: 100%; text-align: left; padding: 1.4rem 1.6rem; display: flex; justify-content: space-between; align-items: center; font-family: var(--font-heading); font-size: 1.1rem; font-weight: 700; color: #fff;">
+              Does paint correction remove significant clear-coat thickness?
+              <span class="text-red" style="font-size: 1.3rem;">+</span>
+            </button>
+            <div class="faq-body" style="padding: 0 1.6rem 1.4rem 1.6rem; color: var(--silver-mid); font-size: 0.95rem; line-height: 1.6;">
+              No. Our certified master technicians use non-invasive dual-action orbital polishers and digital ultrasonic thickness gauges. A typical multi-stage correction removes only 1.5 to 2.5 microns of clear coat (less than the thickness of a single post-it note), while permanently eliminating 85% to 95%+ of surface swirls and scratches.
+            </div>
+          </div>
+
+          <div class="faq-item" style="background: var(--bg-card); border: 1px solid var(--border-subtle); border-radius: var(--radius-md); overflow: hidden;">
+            <button class="faq-trigger" style="width: 100%; text-align: left; padding: 1.4rem 1.6rem; display: flex; justify-content: space-between; align-items: center; font-family: var(--font-heading); font-size: 1.1rem; font-weight: 700; color: #fff;">
+              How should I wash my car after ceramic coating treatment?
+              <span class="text-red" style="font-size: 1.3rem;">+</span>
+            </button>
+            <div class="faq-body" style="padding: 0 1.6rem 1.4rem 1.6rem; color: var(--silver-mid); font-size: 0.95rem; line-height: 1.6;">
+              Thanks to the extreme hydrophobic self-cleaning effect, washing becomes effortless. Simply rinse with high-pressure water to dislodge loose grit, wash using a dedicated pH-neutral shampoo and two-bucket grit guard method, and dry with an ultra-plush 500+ GSM microfiber towel or filtered warm-air blower.
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 10. Final Call to Action -->
+    <section class="section-padding" style="padding-top: 0;">
+      <div class="container">
+        <div class="cta-banner">
+          <div class="cta-banner-content">
+            <h2 class="cta-heading">Join thousands of passionate drivers and collectors protecting their vehicles with clean, surgical automotive brilliance.</h2>
+            <div class="cta-buttons">
+              <a href="booking.html" class="btn btn-mint-pill">Book a Service</a>
+              <a href="packages.html" class="btn btn-glass-pill">Explore Packages</a>
+              <a href="gallery.html" class="btn btn-glass-pill">View Transformations</a>
+            </div>
+            <div class="cta-contact-strip">
+              <span>📍 404 Apex Boulevard, Motor City</span>
+              <span>📞 (555) 749-2886</span>
+              <span>⏱ Mon-Sat: 8am - 6pm</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- Site Footer -->
+  <footer class="site-footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-col">
+          <a href="index.html" class="brand-logo" style="margin-bottom: 1.2rem;">
+            <img src="assets/images/logo-footer.png" alt="Stackly Logo" width="144" height="40">
+          </a>
+          <p>
+            Mobilizing intelligent car detailing, multi-stage paint correction, ceramic coatings, and personalized automotive care for modern vehicles.
+          </p>
+          <div class="social-links" style="margin-top: 1.5rem;">
+            <a href="404.html" class="social-btn" aria-label="LinkedIn">
+              <svg width="15" height="15" viewBox="0 0 24 24" fill="currentColor"><path d="M19 3a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h14m-.5 15.5v-5.3a3.26 3.26 0 0 0-3.26-3.26c-.85 0-1.84.52-2.28 1.3v-1.11h-2.79v8.37h2.79v-4.93c0-.77.62-1.4 1.39-1.4a1.4 1.4 0 0 1 1.4 1.4v4.93h2.75M6.46 10.9v8.37H9.2V10.9H6.46M7.83 6.25c-.9 0-1.62.72-1.62 1.62s.72 1.63 1.62 1.63 1.63-.73 1.63-1.63c0-.9-.73-1.62-1.63-1.62Z"/></svg>
+            </a>
+            <a href="404.html" class="social-btn" aria-label="X (Twitter)">
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg>
+            </a>
+            <a href="404.html" class="social-btn" aria-label="Instagram">
+              <svg width="15" height="15" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/></svg>
+            </a>
+            <a href="404.html" class="social-btn" aria-label="YouTube">
+              <svg width="15" height="15" viewBox="0 0 24 24" fill="currentColor"><path d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"/></svg>
+            </a>
+          </div>
+        </div>
+
+        <div class="footer-col">
+          <h4>Quick Links</h4>
+          <ul class="footer-links">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="about.html">About Stackly</a></li>
+            <li><a href="services.html">Platform Services</a></li>
+            <li><a href="packages.html">Detailing Packages</a></li>
+            <li><a href="gallery.html">Transformation Gallery</a></li>
+            <li><a href="before-after.html">Before & After</a></li>
+            <li><a href="contact.html">Contact Coordinates</a></li>
+            <li><a href="user-dashboard.html">User Dashboard</a></li>
+          </ul>
+        </div>
+
+        <div class="footer-col">
+          <h4>Support</h4>
+          <ul class="footer-links">
+            <li><a href="contact.html">Contact Coordinates</a></li>
+            <li><a href="404.html">Terms & Agreements</a></li>
+            <li><a href="404.html">Security Audits</a></li>
+            <li><a href="service-details.html">Ceramic Coating 9H</a></li>
+            <li><a href="service-details.html">Multi-Stage Paint Correction</a></li>
+            <li><a href="services.html">Interior Restoration</a></li>
+          </ul>
+        </div>
+
+        <div class="footer-col footer-newsletter">
+          <h4>Newsletter</h4>
+          <p>Get quarterly automotive care updates, smart detailing alerts, and platform feature reports.</p>
+          <form class="newsletter-form">
+            <input type="email" placeholder="Your Email" required aria-label="Email for newsletter">
+            <button type="submit">Join</button>
+          </form>
+          <div style="margin-top: 1.5rem; font-size: 0.82rem; color: #64748b;">
+            Demo Notice: Configurable sample prices and front-end interactions.
+          </div>
+        </div>
+      </div>
+
+      <div class="footer-bottom">
+        <p>© 2026 Stackly AutoCare. All rights reserved. Designed for precision clarity and automotive perfection.</p>
+        <div>
+          <a href="about.html" style="margin-right: 1.5rem;">Privacy Policy</a>
+          <a href="about.html" style="margin-right: 1.5rem;">Terms of Service</a>
+          <a href="404.html">Security Audits</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <script src="js/script.js"></script>
+</body>
+</html>

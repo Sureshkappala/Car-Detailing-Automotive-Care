@@ -1,0 +1,378 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>User Dashboard — AutoShine Automotive Care</title>
+  <meta name="description" content="Manage your vehicle detailing appointments, inspection history, registered vehicles, and client profile in the AutoShine portal.">
+  <link rel="icon" type="image/svg+xml" href="assets/images/favicon.svg">
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body class="user-dashboard-page">
+
+  <!-- Dashboard Mobile Header Bar -->
+  <header class="dashboard-mobile-bar">
+    <a href="user-dashboard.html" class="brand-logo" aria-label="AutoShine Dashboard">
+      <img src="assets/images/logo-footer.png" alt="Stackly Logo" width="130" height="34">
+    </a>
+    <div class="dashboard-mobile-actions">
+      <a href="booking.html" class="btn btn-primary btn-sm" style="padding: 0.4rem 0.8rem; font-size: 0.8rem;">+ Book</a>
+      <button id="dashMobileToggle" class="dash-menu-toggle hamburger" aria-label="Toggle Dashboard Menu" aria-expanded="false" style="display: flex !important; width: 40px; height: 40px; background: rgba(255,255,255,0.06); border: 1px solid rgba(255,255,255,0.15);">
+        <span style="background: #ffffff;"></span>
+        <span style="background: #ffffff;"></span>
+        <span style="background: #ffffff;"></span>
+      </button>
+    </div>
+  </header>
+
+  <!-- Mobile Sidebar Overlay -->
+  <div class="dashboard-sidebar-overlay"></div>
+
+  <!-- Main Dashboard Layout -->
+  <div class="dashboard-layout">
+    
+    <!-- Sidebar Navigation -->
+    <aside class="dashboard-sidebar">
+      <div>
+        <!-- Sidebar Brand & Close (Header) -->
+        <div class="dashboard-sidebar-header">
+          <a href="user-dashboard.html" class="brand-logo" aria-label="AutoShine Dashboard">
+            <img src="assets/images/logo-footer.png" alt="Stackly Logo" width="130" height="34">
+          </a>
+          <button class="dashboard-sidebar-close" aria-label="Close menu">✕</button>
+        </div>
+
+        <div class="sidebar-profile">
+          <img src="assets/images/technician-1.webp" alt="Alex Mercer" class="sidebar-avatar">
+          <div>
+            <h4 style="font-size: 1rem; margin-bottom: 0.1rem;">Alex Mercer</h4>
+            <span style="font-size: 0.78rem; color: var(--red-primary); font-weight: 700;">VIP Member</span>
+          </div>
+        </div>
+
+        <nav class="sidebar-nav">
+          <div class="sidebar-link active" data-tab="tab-overview">
+            <span>📊</span> Dashboard Overview
+          </div>
+          <div class="sidebar-link" data-tab="tab-appointments">
+            <span>📅</span> My Appointments
+          </div>
+          <div class="sidebar-link" data-tab="tab-vehicles">
+            <span>🏎</span> Vehicle Garage (2)
+          </div>
+          <div class="sidebar-link" data-tab="tab-saved">
+            <span>★</span> Saved Services
+          </div>
+          <div class="sidebar-link" data-tab="tab-profile">
+            <span>⚙</span> Profile & Settings
+          </div>
+        </nav>
+      </div>
+
+      <div>
+        <div style="background: var(--bg-card); border: 1px solid var(--border-subtle); padding: 1rem; border-radius: var(--radius-sm); margin-bottom: 1.5rem; text-align: center;">
+          <span style="font-size: 0.8rem; color: var(--silver-mid);">Next Inspection</span>
+          <strong style="display: block; color: #fff; font-size: 1.05rem; margin: 0.2rem 0;">Oct 22, 2026</strong>
+          <span style="font-size: 0.75rem; color: #10b981;">10:00 AM • Confirmed</span>
+        </div>
+        <a href="login.html?logout=true" class="sidebar-link" style="color: #ef4444;">
+          <span>🚪</span> Logout
+        </a>
+      </div>
+    </aside>
+
+    <!-- Main Content Area -->
+    <main class="dashboard-content">
+      
+      <!-- TAB 1: OVERVIEW -->
+      <section id="tab-overview" class="dashboard-tab-content" style="display: block;">
+        <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 2rem; flex-wrap: wrap; gap: 1rem;">
+          <div>
+            <h2>Dashboard Overview</h2>
+            <p>Welcome back, Alex. Here is the active status of your vehicles and detailing sessions.</p>
+          </div>
+          <a href="booking.html" class="btn btn-primary btn-sm">+ Book New Service</a>
+        </div>
+
+        <!-- KPI Cards -->
+        <div class="kpi-grid">
+          <div class="kpi-card">
+            <div>
+              <span>Total Bookings</span>
+              <h3>4</h3>
+            </div>
+            <div class="kpi-icon">📅</div>
+          </div>
+
+          <div class="kpi-card">
+            <div>
+              <span>Active Services</span>
+              <h3 class="text-red">2</h3>
+            </div>
+            <div class="kpi-icon">⚡</div>
+          </div>
+
+          <div class="kpi-card">
+            <div>
+              <span>Vehicles Saved</span>
+              <h3>2</h3>
+            </div>
+            <div class="kpi-icon">🏎</div>
+          </div>
+
+          <div class="kpi-card">
+            <div>
+              <span>Loyalty Points</span>
+              <h3 style="color: #fbbf24;">1,450</h3>
+            </div>
+            <div class="kpi-icon">💎</div>
+          </div>
+        </div>
+
+        <!-- Live Appointments Preview -->
+        <div style="margin-top: 2rem;">
+          <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 1.2rem;">
+            <h3>Upcoming Appointments</h3>
+            <span style="font-size: 0.85rem; color: var(--silver-mid);">Demo Interactive List</span>
+          </div>
+
+          <div id="userAppointmentsList">
+            <!-- Dynamically populated from JS -->
+          </div>
+        </div>
+              <!-- New Section 1: Ceramic Coating Health & Telemetry -->
+        <div style="margin-top: 2.5rem; background: var(--bg-card); border: 1px solid var(--border-subtle); border-radius: var(--radius-lg); padding: 1.8rem;">
+          <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 1.2rem; flex-wrap: wrap; gap: 1rem;">
+            <div>
+              <span class="section-tag">Live Surface Telemetry</span>
+              <h3 style="margin-top: 0.2rem;">Ceramic Coating Health Status</h3>
+            </div>
+            <span class="status-badge confirmed">Hydrophobic Layer: 94% Optimal</span>
+          </div>
+
+          <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 1.2rem;">
+            <div style="background: var(--bg-tertiary); padding: 1rem; border-radius: var(--radius-sm); border: 1px solid var(--border-subtle);">
+              <span style="font-size: 0.8rem; color: var(--silver-mid);">Water Contact Angle</span>
+              <strong style="display: block; font-size: 1.3rem; color: #10b981; margin-top: 0.2rem;">112° (Extreme Beading)</strong>
+            </div>
+
+            <div style="background: var(--bg-tertiary); padding: 1rem; border-radius: var(--radius-sm); border: 1px solid var(--border-subtle);">
+              <span style="font-size: 0.8rem; color: var(--silver-mid);">Days Since Last Decon</span>
+              <strong style="display: block; font-size: 1.3rem; color: #ffffff; margin-top: 0.2rem;">42 Days</strong>
+            </div>
+
+            <div style="background: var(--bg-tertiary); padding: 1rem; border-radius: var(--radius-sm); border: 1px solid var(--border-subtle);">
+              <span style="font-size: 0.8rem; color: var(--silver-mid);">Warranty Expiry</span>
+              <strong style="display: block; font-size: 1.3rem; color: var(--red-primary); margin-top: 0.2rem;">March 2028</strong>
+            </div>
+
+            <div style="background: var(--bg-tertiary); padding: 1rem; border-radius: var(--radius-sm); border: 1px solid var(--border-subtle);">
+              <span style="font-size: 0.8rem; color: var(--silver-mid);">Next Re-Boost Advisory</span>
+              <strong style="display: block; font-size: 1.3rem; color: #f59e0b; margin-top: 0.2rem;">November 2026</strong>
+            </div>
+          </div>
+        </div>
+
+        <!-- New Section 2: Seasonal Vehicle Advisory & Rewards -->
+        <div class="dash-two-col" style="margin-top: 2rem;">
+          <div style="background: var(--bg-card); border: 1px solid var(--border-subtle); border-radius: var(--radius-lg); padding: 1.8rem;">
+            <h4 style="margin-bottom: 0.6rem;">🍂 Autumn & Winter Road Prep Advisory</h4>
+            <p style="font-size: 0.9rem; color: var(--silver-mid); line-height: 1.5;">
+              Falling leaves, wet road grime, and road salt cause localized chemical spotting on uncoated wheels and door sills. We recommend an undercarriage wash and wheel ceramic barrier prior to winter rainstorms.
+            </p>
+            <a href="booking.html?service=wash" class="btn btn-outline-red btn-sm" style="margin-top: 1rem;">Schedule Winter Prep Wash</a>
+          </div>
+
+          <div style="background: var(--bg-card); border: 1px solid var(--border-subtle); border-radius: var(--radius-lg); padding: 1.8rem; display: flex; flex-direction: column; justify-content: space-between;">
+            <div>
+              <span class="section-tag">VIP Loyalty Rewards</span>
+              <h4 style="margin: 0.4rem 0;">1,450 Driver Points</h4>
+              <p style="font-size: 0.85rem; color: var(--silver-mid);">You are 50 points away from a complimentary leather conditioning upgrade voucher.</p>
+            </div>
+            <a href="404.html" class="btn btn-primary btn-sm">Redeem Rain Repellent</a>
+          </div>
+        </div>
+      </section>
+
+      <!-- TAB 2: MY APPOINTMENTS -->
+      <section id="tab-appointments" class="dashboard-tab-content" style="display: none;">
+        <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 2rem; flex-wrap: wrap; gap: 1rem;">
+          <div>
+            <h2>My Appointments & History</h2>
+            <p>Review active booking confirmations, past inspections, or cancel demo reservations.</p>
+          </div>
+          <a href="booking.html" class="btn btn-primary btn-sm">+ Schedule Detailing</a>
+        </div>
+
+        <div class="table-responsive" style="margin-bottom: 2rem;">
+          <table class="data-table">
+            <thead>
+              <tr>
+                <th>Reference</th>
+                <th>Vehicle</th>
+                <th>Package / Service</th>
+                <th>Date & Slot</th>
+                <th>Demo Total</th>
+                <th>Status</th>
+                <th>Actions</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td><strong class="text-red">ASH-849201</strong></td>
+                <td>Porsche 911 Carrera (Coupe)</td>
+                <td>Ultimate Protection (9H Ceramic)</td>
+                <td>2026-10-22 at 10:00 AM</td>
+                <td>$599</td>
+                <td><span class="status-badge confirmed">Confirmed</span></td>
+                <td>
+                  <button class="btn btn-outline-red btn-sm btn-cancel-booking" data-ref="ASH-849201">Cancel</button>
+                </td>
+              </tr>
+              <tr>
+                <td><strong class="text-red">ASH-329482</strong></td>
+                <td>BMW M3 Competition (Sedan)</td>
+                <td>Premium Detail (Paint Correction)</td>
+                <td>2026-10-18 at 02:30 PM</td>
+                <td>$249</td>
+                <td><span class="status-badge progress">In Progress</span></td>
+                <td>
+                  <a href="404.html" class="btn btn-secondary btn-sm">View Bay</a>
+                </td>
+              </tr>
+              <tr>
+                <td><strong class="text-silver">ASH-119284</strong></td>
+                <td>Porsche 911 Carrera (Coupe)</td>
+                <td>Essential Shine Maintenance</td>
+                <td>2026-08-14 at 09:00 AM</td>
+                <td>$99</td>
+                <td><span class="status-badge confirmed" style="background: rgba(255,255,255,0.1); color: #fff; border-color: rgba(255,255,255,0.2);">Completed</span></td>
+                <td>
+                  <a href="404.html" class="btn btn-secondary btn-sm">Report</a>
+                </td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </section>
+
+      <!-- TAB 3: VEHICLE DETAILS -->
+      <section id="tab-vehicles" class="dashboard-tab-content" style="display: none;">
+        <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 2rem; flex-wrap: wrap; gap: 1rem;">
+          <div>
+            <h2>Registered Vehicles</h2>
+            <p>Manage the cars saved in your AutoShine garage for rapid 1-click booking.</p>
+          </div>
+          <a href="404.html" class="btn btn-primary btn-sm">+ Add Vehicle</a>
+        </div>
+
+        <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: 1.5rem;">
+          
+          <div class="service-card" style="padding: 1.8rem; background: var(--bg-card);">
+            <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 1rem;">
+              <span class="service-badge" style="position: static;">Primary Car</span>
+              <span style="font-size: 0.8rem; color: #10b981;">🛡 9H Ceramic Coated</span>
+            </div>
+            <h3>Porsche 911 Carrera (992)</h3>
+            <p style="margin: 0.5rem 0 1rem 0; font-size: 0.9rem;">
+              Color: <strong>Gentian Blue Metallic</strong><br>
+              Reg: <strong>7XYZ999</strong> • Type: <strong>Coupe / Luxury</strong><br>
+              Last Detailing: <strong>August 14, 2026</strong>
+            </p>
+            <div style="display: flex; gap: 0.8rem; margin-top: 1rem;">
+              <a href="booking.html?service=ceramic" class="btn btn-primary btn-sm" style="flex: 1;">Book Service</a>
+              <a href="404.html" class="btn btn-secondary btn-sm">Edit</a>
+            </div>
+          </div>
+
+          <div class="service-card" style="padding: 1.8rem; background: var(--bg-card);">
+            <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 1rem;">
+              <span class="service-badge" style="position: static;">Secondary</span>
+              <span style="font-size: 0.8rem; color: #3b82f6;">⚡ In Progress</span>
+            </div>
+            <h3>BMW M3 Competition (G80)</h3>
+            <p style="margin: 0.5rem 0 1rem 0; font-size: 0.9rem;">
+              Color: <strong>Isle of Man Green</strong><br>
+              Reg: <strong>M3-POWER</strong> • Type: <strong>Sedan</strong><br>
+              Scheduled: <strong>October 18, 2026</strong>
+            </p>
+            <div style="display: flex; gap: 0.8rem; margin-top: 1rem;">
+              <a href="booking.html?service=wash" class="btn btn-primary btn-sm" style="flex: 1;">Book Service</a>
+              <a href="404.html" class="btn btn-secondary btn-sm">Edit</a>
+            </div>
+          </div>
+
+        </div>
+      </section>
+
+      <!-- TAB 4: SAVED SERVICES -->
+      <section id="tab-saved" class="dashboard-tab-content" style="display: none;">
+        <h2>Saved Favorite Services</h2>
+        <p style="margin-bottom: 2rem;">Quick shortcuts to your favorite AutoShine detailing rituals.</p>
+
+        <div class="services-grid">
+          <div class="service-card">
+            <div class="service-card-body">
+              <h3>Ceramic Coating 9H Diamond</h3>
+              <p>2-Year hydrophobic glass armor with paint swirl elimination.</p>
+              <strong style="color: #fff; font-size: 1.4rem; display: block; margin-bottom: 1rem;">$599*</strong>
+              <a href="booking.html?service=ceramic" class="btn btn-primary btn-block">Quick Book</a>
+            </div>
+          </div>
+          <div class="service-card">
+            <div class="service-card-body">
+              <h3>Interior Deep Steam Extraction</h3>
+              <p>Stain extraction, leather nourishment, and germ eradication.</p>
+              <strong style="color: #fff; font-size: 1.4rem; display: block; margin-bottom: 1rem;">$129*</strong>
+              <a href="booking.html?service=interior" class="btn btn-primary btn-block">Quick Book</a>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- TAB 5: PROFILE & SETTINGS -->
+      <section id="tab-profile" class="dashboard-tab-content" style="display: none;">
+        <h2>Profile & Preferences</h2>
+        <p style="margin-bottom: 2rem;">Update your personal contact details and notification settings.</p>
+
+        <div class="booking-form-card" style="max-width: 650px;">
+          <form onsubmit="event.preventDefault(); showToast('Profile preferences updated (Demo).', 'success');">
+            <div class="form-group">
+              <label class="form-label">Full Name</label>
+              <input type="text" class="form-control" value="Alex Mercer">
+            </div>
+
+            <div class="form-row">
+              <div class="form-group">
+                <label class="form-label">Email</label>
+                <input type="email" class="form-control" value="alex.driver@example.com">
+              </div>
+              <div class="form-group">
+                <label class="form-label">Phone</label>
+                <input type="tel" class="form-control" value="5557492886">
+              </div>
+            </div>
+
+            <div style="margin: 1.5rem 0;">
+              <h4 style="margin-bottom: 0.8rem;">Notification Channels</h4>
+              <label class="checkbox-wrap" style="margin-bottom: 0.6rem;">
+                <input type="checkbox" checked>
+                <span>SMS reminder 24 hours prior to appointment</span>
+              </label>
+              <label class="checkbox-wrap" style="margin-bottom: 0.6rem;">
+                <input type="checkbox" checked>
+                <span>Email inspection gallery & high-res completion photos</span>
+              </label>
+            </div>
+
+            <button type="submit" class="btn btn-primary">Save Changes</button>
+          </form>
+        </div>
+      </section>
+
+    </main>
+  </div>
+
+  <script src="js/script.js"></script>
+</body>
+</html>
