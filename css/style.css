@@ -337,6 +337,25 @@ p:last-child {
   color: #ffffff;
   border: 1px solid #ff4d5d;
   box-shadow: var(--shadow-red);
+  position: relative;
+  overflow: hidden;
+}
+
+.btn-primary::after {
+  content: '';
+  position: absolute;
+  top: -50%;
+  left: -75%;
+  width: 50%;
+  height: 200%;
+  background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.35), transparent);
+  transform: rotate(25deg);
+  transition: left 0.75s cubic-bezier(0.16, 1, 0.3, 1);
+  pointer-events: none;
+}
+
+.btn-primary:hover::after {
+  left: 140%;
 }
 
 .btn-primary:hover {
@@ -751,14 +770,20 @@ p:last-child {
   max-width: 620px;
 }
 
+.hero-content .section-tag {
+  animation: heroFadeDown 0.8s cubic-bezier(0.16, 1, 0.3, 1) both;
+}
+
 .hero-content h1 {
   margin-bottom: 1.25rem;
+  animation: heroFadeUp 0.85s cubic-bezier(0.16, 1, 0.3, 1) 0.12s both;
 }
 
 .hero-content p {
   font-size: 1.15rem;
   margin-bottom: 2.2rem;
   color: var(--silver-light);
+  animation: heroFadeUp 0.85s cubic-bezier(0.16, 1, 0.3, 1) 0.24s both;
 }
 
 .hero-actions {
@@ -766,6 +791,7 @@ p:last-child {
   flex-wrap: wrap;
   gap: 1.2rem;
   margin-bottom: 2.5rem;
+  animation: heroFadeUp 0.85s cubic-bezier(0.16, 1, 0.3, 1) 0.36s both;
 }
 
 .hero-stats {
@@ -774,6 +800,7 @@ p:last-child {
   gap: 1.5rem;
   padding-top: 2rem;
   border-top: 1px solid var(--border-subtle);
+  animation: heroFadeUp 0.85s cubic-bezier(0.16, 1, 0.3, 1) 0.48s both;
 }
 
 .stat-item h3 {
@@ -790,6 +817,7 @@ p:last-child {
 
 .hero-image-wrap {
   position: relative;
+  animation: heroImageEntrance 1s cubic-bezier(0.16, 1, 0.3, 1) 0.2s both;
 }
 
 .hero-image-wrap::before {
@@ -802,6 +830,7 @@ p:last-child {
   background: radial-gradient(circle, var(--red-glow) 0%, transparent 70%);
   z-index: -1;
   filter: blur(30px);
+  animation: pulseGlow 4s ease-in-out infinite;
 }
 
 .hero-image-frame {
@@ -812,6 +841,27 @@ p:last-child {
   box-shadow: var(--shadow-lg), 0 0 40px rgba(255, 42, 59, 0.2);
   transform: perspective(1000px) rotateY(-5deg) rotateX(3deg);
   transition: transform var(--transition-slow);
+}
+
+.hero-image-frame::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -140%;
+  width: 65%;
+  height: 100%;
+  background: linear-gradient(
+    90deg,
+    transparent 0%,
+    rgba(255, 255, 255, 0.05) 35%,
+    rgba(255, 255, 255, 0.25) 50%,
+    rgba(0, 240, 255, 0.35) 55%,
+    transparent 100%
+  );
+  transform: skewX(-25deg);
+  animation: lightSheenSweep 7s ease-in-out 1.5s infinite;
+  pointer-events: none;
+  z-index: 2;
 }
 
 .hero-image-frame:hover {
@@ -832,6 +882,77 @@ p:last-child {
   gap: 1rem;
   backdrop-filter: blur(10px);
   animation: floatSlow 5s ease-in-out infinite;
+}
+
+.pulse-dot {
+  animation: dotPulse 2s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+}
+
+@keyframes heroFadeDown {
+  from {
+    opacity: 0;
+    transform: translateY(-20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes heroFadeUp {
+  from {
+    opacity: 0;
+    transform: translateY(28px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes heroImageEntrance {
+  from {
+    opacity: 0;
+    transform: scale(0.94) translateY(24px);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1) translateY(0);
+  }
+}
+
+@keyframes lightSheenSweep {
+  0%, 30% {
+    left: -140%;
+    opacity: 0;
+  }
+  38% {
+    opacity: 1;
+  }
+  60%, 100% {
+    left: 220%;
+    opacity: 0;
+  }
+}
+
+@keyframes dotPulse {
+  0%, 100% {
+    box-shadow: 0 0 0 0 rgba(16, 185, 129, 0.7);
+    transform: scale(1);
+  }
+  50% {
+    box-shadow: 0 0 0 8px rgba(16, 185, 129, 0);
+    transform: scale(1.08);
+  }
+}
+
+@keyframes pulseGlow {
+  0%, 100% {
+    opacity: 0.6;
+  }
+  50% {
+    opacity: 0.95;
+  }
 }
 
 @keyframes floatSlow {
@@ -2414,6 +2535,85 @@ p:last-child {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
   gap: 1.8rem;
+}
+
+/* ==========================================================================
+   GLOBAL SCROLL REVEAL & MICRO-ANIMATIONS
+   ========================================================================== */
+.reveal-on-scroll {
+  opacity: 0;
+  transform: translateY(28px);
+  transition: opacity 0.7s cubic-bezier(0.16, 1, 0.3, 1), transform 0.7s cubic-bezier(0.16, 1, 0.3, 1);
+  will-change: opacity, transform;
+}
+
+.reveal-on-scroll.is-revealed {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* Enhanced Card & Component Hover Micro-Animations */
+.feature-box,
+.pricing-card,
+.service-card,
+.trust-card,
+.review-card,
+.booking-form-card,
+.kpi-card {
+  transition: transform 0.35s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.35s cubic-bezier(0.16, 1, 0.3, 1), border-color 0.3s ease;
+}
+
+.feature-box:hover {
+  transform: translateY(-6px);
+  border-color: var(--border-red);
+  box-shadow: 0 16px 36px rgba(0, 0, 0, 0.65), 0 0 22px var(--red-glow);
+}
+
+.feature-box:hover .feature-icon-wrap {
+  transform: scale(1.15) rotate(6deg);
+  background: var(--red-subtle);
+  border-color: var(--red-primary);
+}
+
+.feature-icon-wrap {
+  transition: transform 0.35s cubic-bezier(0.16, 1, 0.3, 1), background 0.3s ease, border-color 0.3s ease;
+}
+
+.service-card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 16px 36px rgba(0, 0, 0, 0.65), 0 0 20px var(--red-glow);
+}
+
+.trust-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 12px 28px rgba(0, 0, 0, 0.5), 0 0 16px var(--red-glow);
+}
+
+.review-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 12px 28px rgba(0, 0, 0, 0.5);
+  border-color: rgba(255, 255, 255, 0.2);
+}
+
+.stat-item {
+  transition: transform 0.3s ease;
+}
+
+.stat-item:hover {
+  transform: translateY(-3px);
+}
+
+/* Accessible reduced motion override */
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+  .reveal-on-scroll {
+    opacity: 1 !important;
+    transform: none !important;
+  }
 }
 
 @media (max-width: 992px) {

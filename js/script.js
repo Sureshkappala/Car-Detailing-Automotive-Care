@@ -19,6 +19,8 @@ document.addEventListener('DOMContentLoaded', () => {
   initNewsletterForm();
   initFaqAccordions();
   initGlossTelemetry();
+  initScrollAnimations();
+  initStatCounters();
 });
 
 /* ==========================================================================
@@ -1119,4 +1121,108 @@ function initGlossTelemetry() {
     });
   });
 }
+
+/* ==========================================================================
+   14. Global Scroll Reveal & Stat Counter Animations
+   ========================================================================== */
+function initScrollAnimations() {
+  const targets = document.querySelectorAll(
+    '.feature-box, .pricing-card, .service-card, .trust-card, .review-card, ' +
+    '.gallery-item, .ba-container, .step-card, .cert-card, .booking-form-card, ' +
+    '.section-header, .stat-item, .process-step, .tech-chamfer'
+  );
+
+  if (!targets.length) return;
+
+  // Accessibility check: Reveal immediately if reduced motion is preferred or IntersectionObserver unsupported
+  if (window.matchMedia('(prefers-reduced-motion: reduce)').matches || !('IntersectionObserver' in window)) {
+    targets.forEach(el => el.classList.add('is-revealed'));
+    return;
+  }
+
+  const observer = new IntersectionObserver((entries, obs) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add('is-revealed');
+        obs.unobserve(entry.target);
+      }
+    });
+  }, {
+    root: null,
+    rootMargin: '0px 0px -40px 0px',
+    threshold: 0.1
+  });
+
+  targets.forEach(el => {
+    el.classList.add('reveal-on-scroll');
+    // Stagger siblings in grids
+    const parent = el.parentElement;
+    if (parent) {
+      const idx = Array.from(parent.children).indexOf(el);
+      if (idx > 0 && idx < 8) {
+        el.style.transitionDelay = `${(idx % 4) * 0.08}s`;
+      }
+    }
+    observer.observe(el);
+  });
+}
+
+function initStatCounters() {
+  const stats = document.querySelectorAll('.stat-item h3, .stats-two-col h3, .stats-4-col h3, .hero-stats h3');
+  if (!stats.length) return;
+
+  if (window.matchMedia('(prefers-reduced-motion: reduce)').matches || !('IntersectionObserver' in window)) {
+    return;
+  }
+
+  const observer = new IntersectionObserver((entries, obs) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        animateCounter(entry.target);
+        obs.unobserve(entry.target);
+      }
+    });
+  }, { threshold: 0.25 });
+
+  stats.forEach(stat => observer.observe(stat));
+
+  function animateCounter(el) {
+    const raw = el.textContent.trim();
+    // Match pattern like "3,500+", "99.8%", "100%", "48 GU", "12+", "< 2.5 µm"
+    const match = raw.match(/^([<+]?\s*)([\d,]+(\.\d+)?)(\s*.*)$/);
+    if (!match) return;
+
+    const prefix = match[1] || '';
+    const numericStr = match[2].replace(/,/g, '');
+    const targetNum = parseFloat(numericStr);
+    const suffix = match[4] || '';
+    const isDecimal = numericStr.includes('.');
+    const decimalPlaces = isDecimal ? numericStr.split('.')[1].length : 0;
+    const duration = 1400; // 1.4s
+    const startTime = performance.now();
+
+    function tick(now) {
+      const elapsed = now - startTime;
+      const progress = Math.min(elapsed / duration, 1);
+      // Ease out cubic
+      const ease = 1 - Math.pow(1 - progress, 3);
+      const current = targetNum * ease;
+
+      const formatted = isDecimal
+        ? current.toFixed(decimalPlaces)
+        : Math.floor(current).toLocaleString();
+
+      el.textContent = `${prefix}${formatted}${suffix}`;
+
+      if (progress < 1) {
+        requestAnimationFrame(tick);
+      } else {
+        el.textContent = raw; // Restore original formatting exactly
+      }
+    }
+
+    requestAnimationFrame(tick);
+  }
+}
+
 
