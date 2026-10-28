@@ -906,7 +906,7 @@ function renderUserAppointments() {
         <div>💰 Demo Est: <strong style="color: #fff;">${b.price}</strong></div>
       </div>
       <div style="display: flex; gap: 0.8rem; justify-content: flex-end;">
-        <button class="btn btn-secondary btn-sm" onclick="alert('Viewing full inspection checklist and vehicle handover status for Ref: ${b.ref}')">View Details</button>
+        <a href="404.html" class="btn btn-secondary btn-sm">View Details</a>
         <button class="btn btn-outline-red btn-sm btn-cancel-booking" data-ref="${b.ref}">Cancel Booking</button>
       </div>
     </div>
